@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #fff;
+}
+
+header{
+    background: #003d22;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.logo-box img{
+    height: 80px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover{
+    color: hsl(44, 73%, 48%);
+    transition: 0.3s;
+}
+
+.whatsapp-btn{
+    background: #55b84d;
+    padding: 12px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.hero{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #004d29;
+}
+
+.overlay{
+    padding: 80px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1{
+    font-size: 70px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.hero h1 span{
+    color: #7fd321;
+}
+
+.hero p{
+    margin-top: 25px;
+    font-size: 22px;
+    max-width: 550px;
+}
+
+.buttons{
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn{
+    padding: 16px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background: #0d5c2f;
+    transform: translateY(-3px);
+    transition: 0.3s ease;
+}
+
+.green{
+    background: #61c232;
+    color: white;
+}
+
+.dark{
+    border: 2px solid white;
+    color: white;
+}
+
+.launch{
+    margin-top: 25px;
+    font-size: 22px;
+}
+
+.hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px;
+    background: white;
+}
+
+.service{
+    text-align: center;
+    padding: 20px;
+}
+
+.service:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.service i{
+    font-size: 40px;
+    color: #004d29;
+    margin-bottom: 15px;
+}
+
+.packages{
+    padding: 70px;
+    background: #f7f7f2;
+}
+
+.service-link{
+    text-decoration: none;
+    color: chocolate;
+}
+
+.service-link:hover{
+    color: #5c3317;
+}
+
+.packages h2{
+    text-align: center;
+    font-size: 42px;
+    color: #004d29;
+    margin-bottom: 40px;
+}
+.package-grid{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 30px;
+}
+
+.package{
+    background: white;
+    border: 3px solid #3b9d2f;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+}
+
+.package:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: #7fd321;
+    transition: 0.3s ease;
+}
+
+.package img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.package h3{
+    color: #2f8c2c;
+}
+
+.price{
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.price span{
+    font-size: 70px;
+    font-weight: 800;
+    color: #2f8c2c;
+}
+
+.pickup{
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.pickup span{
+    font-size: 50px;
+    font-weight: 600;
+    color: crimson;
+}
+
+.package ul{
+    list-style: none;
+    line-height: 2;
+}
+
+.register-btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #3b9d2f;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.why-choose-us{
+    background: #003d22;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 40px;
+    color: white;
+}
+
+.why-choose{
+    text-align: center;
+}
+
+.why-choose h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact{
+    padding: 80px 8%;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.contact h2{
+    font-size: 42px;
+    color: #004d29;
+    margin-bottom: 20px;
+}
+
+.contact-text{
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.contact-details{
+    background: white;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details p{
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.about{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.about h1{
+    color: #004d29;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.about p{
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.back{
+    display: inline-block;
+    margin-top: 20px;
+    background: #3b9d2f;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.back:hover{
+    background: #0d5c2f;
+    transition: 0.3s ease;
+}
+
