@@ -9,6 +9,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     </head>
     <body>
+        <div id="launchPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <img src="images/launch-poster.jpg" alt="Launch Poster">
+            </div>
+        </div>
 
     <header>
         <div class="logo-box">
@@ -51,7 +57,7 @@
             
             <div class="buttons">
 
-                <a href="#contact" class="btn green">
+                <a href="register-now.html" class="btn green">
                     Register Now
                 </a>
 
@@ -64,7 +70,7 @@
             <div class="launch">
                 <i class="fa-solid fa-calendar-days"></i>
                 Official Launch:
-                <strong> July 2026</strong>
+                <strong> Monday, 20th July 2026</strong>
             </div>
         </div>
         </div>
@@ -106,7 +112,7 @@
 
     <section id="packages" class="packages">
 
-        <h2>Our Registration Packages</h2>
+        <h2>Our MAIN Registration Packages</h2>
 
         <div class="package-grid">
             <div class="package">
@@ -117,7 +123,7 @@
                     GHC <span>100</span>
                 </div>
                 <div class="pickup">
-                    GHC <span>30</span> per full pick-up 
+                    GHC <span>35</span> per full pick-up 
                 </div>
 
                 <ul>
@@ -140,7 +146,7 @@
                     GHC <span>170</span>
                 </div>
                 <div class="pickup">
-                    GHC <span>45</span> per full pick-up
+                    GHC <span>50</span> per full pick-up
                 </div>
 
                 <ul>
@@ -148,10 +154,12 @@
                     <li>First 2 pickups FREE</li>
                     <li>Large Capacity Collection</li>
                  </ul>
-
-                 <a href="#contact" class="register-btn">
-                    Register Now
-                 </a>
+                
+            </div>
+             <div class="package">
+                <a href="other-packages.html" class="package-link">
+                <h3>CLICH HERE for our other <span>PACKAGES</span></h3>
+                </a>
             </div>
 
             </div>
@@ -222,7 +230,11 @@
             </p>
         </div>
     </section>
-
+          <script>
+        function closePopup() {
+            document.getElementById("launchPopup").style.display = "none";
+        }
+    </script>
 
     </body>
 </html>
