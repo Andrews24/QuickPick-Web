@@ -31,6 +31,30 @@
         </a>
 
     </header>
+        
+         <style>
+            .us{
+                 display: flex;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+               
+            }
+
+            .us img{
+                 width: 100%;
+                height: 1000px;
+                object-position: left;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            @media (max-width: 768px){
+           .us img{
+                   width: 90%;
+                 max-width: 350px;
+                  }
+                }
+        </style>
+        
 
     <section class="about">
         <h1>About QuickPick Waste Management Services</h1>
@@ -40,6 +64,9 @@
             environmental sanitation challenges and reduce flooding and other related
             problems caused by indiscriminate refuse dumping in our communities.
         </p>
+         <div class="us">
+            <img src="images/us.png">
+        </div>
 
         <p>
             We offer reliable waste collection services, recycling solutions,
