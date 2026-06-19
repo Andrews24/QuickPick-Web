@@ -47,6 +47,25 @@
                 padding: 12px 25px;
                 border-radius: 8px;
             }
+            
+             .lightbox{
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+
+            .lightbox img{
+                max-width: 95%;
+                max-height: 95%;
+                border-radius: 10px;
+            }
 
         </style>
     </head>
@@ -61,13 +80,26 @@
         <a href="index.html" class="back">Back to Home</a>
 
         <div class="gallery">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
-
+             <img src="images/awareness.jpg.JPG" onclick="openImage(this.src)">
+            <img src="images/kma.jpg.JPG" onclick="openImage(this.src)">
+            <img src="images/dump.jpg.JPG" onclick="openImage(this.src)">
+            <img src="images/launch-poster.jpg" onclick="openImage(this.src)">
         </div>
+        
+          <div id="lightbox" class="lightbox" onclick="closeImage()">
+            <img id="lightbox-img">
+        </div>
+
+         <script>
+            function openImage(src){
+                document.getElementById("lightbox").style.display = "flex";
+                document.getElementById("lightbox-img").src = src;
+            }
+
+            function closeImage(){
+                document.getElementById("lightbox").style.display = "none";
+            }
+        </script>
+
     </body>
 </html>
