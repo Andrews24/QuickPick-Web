@@ -271,6 +271,43 @@ nav a:hover{
     line-height: 2;
 }
 
+.already{
+     background: white;
+    border: 3px solid #3b9d2f;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+}
+
+.already:hover{
+     transform: trqanslateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: #7fd321;
+    transition: 0.3s ease;
+}
+
+.already span{
+     font-size: 30px;
+    font-weight: 600;
+    color: crimson;
+}
+
+.already strong{
+    font-size: 30px;
+    font-weight: 100;
+    color: chocolate;
+}
+
+.already-link{
+     text-decoration: none;
+    color: chocolate;
+}
+
+.already ul{
+    list-style: none;
+    line-height: 2;
+}
+
 .register-btn{
     display: inline-block;
     margin-top: 20px;
