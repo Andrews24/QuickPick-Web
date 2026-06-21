@@ -203,6 +203,45 @@
         });
     }
 
+    /* ---- Detailed form: live estimated monthly cost ---- */
+    var regEstimate = document.querySelector("#regEstimate");
+    if (regEstimate) {
+        var regForm2 = document.querySelector("#registrationForm");
+        var valEl = document.querySelector("#regEstimateVal");
+        var bdEl = document.querySelector("#regEstimateBd");
+        function updateRegEstimate() {
+            var bin = regForm2.querySelector('input[name="bin"]:checked');
+            var freq = regForm2.querySelector('input[name="frequency"]:checked');
+            if (!bin || !freq) {
+                regEstimate.style.display = "none";
+                return;
+            }
+            regEstimate.style.display = "";
+            var single = parseFloat(bin.getAttribute("data-single")) || 0;
+            var multi = parseFloat(bin.getAttribute("data-multi")) || single;
+            var per = parseFloat(freq.getAttribute("data-permonth"));
+            var binLabel = bin.parentElement.textContent.trim();
+            var freqLabel = freq.parentElement.textContent.trim();
+            if (!per || per <= 0) {
+                // On Call — usage varies
+                valEl.innerHTML = "GHC " + single + " <small>/ pickup</small>";
+                bdEl.textContent = binLabel + " · " + freqLabel + " (varies with usage)";
+                return;
+            }
+            var rate = per > 1 ? multi : single;
+            var total = rate * per;
+            var word = per === 1 ? " pickup" : " pickups";
+            valEl.innerHTML = "GHC " + total + " <small>/ month</small>";
+            bdEl.textContent =
+                binLabel + " · " + freqLabel + " (GHC " + rate + " × " + per + word + ")";
+        }
+        regForm2
+            .querySelectorAll('input[name="bin"], input[name="frequency"]')
+            .forEach(function (r) {
+                r.addEventListener("change", updateRegEstimate);
+            });
+    }
+
     /* ---- Detailed registration form → WhatsApp ---- */
     var sendDetailed = document.querySelector("#sendDetailedWa");
     if (sendDetailed) {

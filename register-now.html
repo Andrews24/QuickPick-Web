@@ -50,8 +50,7 @@
                     </div>
                     <div class="field"><label for="qrBin">Bin Size</label>
                         <select id="qrBin" name="bin">
-                            <option>10L</option><option>20L</option><option>30L</option><option>50L</option>
-                            <option>60L</option><option selected>120L</option><option>240L</option><option>360L</option>
+                            <option selected>120L</option><option>240L</option><option>360L</option>
                             <option>I already have a bin</option>
                         </select>
                     </div>
@@ -95,20 +94,27 @@
                     <div class="spacer"></div>
                     <label>Bin Size / Package</label>
                     <div class="checkbox-group">
-                        <label><input type="radio" name="bin"> I already have a bin</label>
-                        <label><input type="radio" name="bin"> 60L</label>
-                        <label><input type="radio" name="bin"> 120L</label>
-                        <label><input type="radio" name="bin"> 240L</label>
-                        <label><input type="radio" name="bin"> 360L</label>
+                        <label><input type="radio" name="bin" value="120L" data-single="35" data-multi="30"> 120L</label>
+                        <label><input type="radio" name="bin" value="240L" data-single="50" data-multi="45"> 240L</label>
+                        <label><input type="radio" name="bin" value="360L" data-single="70" data-multi="65"> 360L</label>
                     </div>
                     <div class="spacer"></div>
                     <label>Collection Frequency</label>
                     <div class="checkbox-group">
-                        <label><input type="radio" name="frequency"> Daily</label>
-                        <label><input type="radio" name="frequency"> Weekly</label>
-                        <label><input type="radio" name="frequency"> Bi-Weekly</label>
-                        <label><input type="radio" name="frequency"> Monthly</label>
-                        <label><input type="radio" name="frequency"> On Call</label>
+                        <label><input type="radio" name="frequency" data-permonth="30"> Daily</label>
+                        <label><input type="radio" name="frequency" data-permonth="4"> Weekly</label>
+                        <label><input type="radio" name="frequency" data-permonth="2"> Bi-Weekly</label>
+                        <label><input type="radio" name="frequency" data-permonth="1"> Monthly</label>
+                        <label><input type="radio" name="frequency" data-permonth="0"> On Call</label>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="reg-estimate" id="regEstimate" style="display:none">
+                        <i class="fa-solid fa-calculator"></i>
+                        <div>
+                            <span class="lbl">Estimated monthly cost</span>
+                            <span class="val" id="regEstimateVal">—</span>
+                            <span class="bd" id="regEstimateBd"></span>
+                        </div>
                     </div>
                     <div class="spacer"></div>
                     <label>Preferred Collection Time</label><input type="text">
