@@ -88,6 +88,25 @@
     </div>
 </section>
 
+<!-- ===== Launch countdown ===== -->
+<section class="countdown-band">
+    <div class="container">
+        <div id="countdown" class="countdown-inner" data-target="2026-07-20T00:00:00">
+            <div class="countdown-copy">
+                <span class="eyebrow"><i class="fa-solid fa-rocket"></i> Countdown to launch</span>
+                <h3>We Officially Launch Soon!</h3>
+                <p>Monday, 20th July 2026 — register now to be first in line.</p>
+            </div>
+            <div class="countdown-clock">
+                <div class="cd-unit"><strong data-d>0</strong><span>Days</span></div>
+                <div class="cd-unit"><strong data-h>00</strong><span>Hours</span></div>
+                <div class="cd-unit"><strong data-m>00</strong><span>Minutes</span></div>
+                <div class="cd-unit"><strong data-s>00</strong><span>Seconds</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== Services ===== -->
 <section class="section" id="services">
     <div class="container">
@@ -141,6 +160,50 @@
             <div class="bin-card reveal d3"><div class="bin-size">360L</div><img class="bin-svg" src="images/bins/bin-360.png" alt="360L QuickPick bin"><div class="bin-price"><span class="cur">GHC</span> <span class="amt">70</span><span class="per">per full pickup</span></div></div>
         </div>
         <p class="bin-note"><i class="fa-solid fa-circle-info text-accent"></i> See the full price chart on our <a href="other-packages.html" class="text-accent"><strong>packages page</strong></a>, or <a href="contact.html" class="text-accent"><strong>talk to our team</strong></a> to choose.</p>
+    </div>
+</section>
+
+<!-- ===== Cost calculator ===== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-calculator"></i> Cost estimator</span>
+            <h2>Estimate Your Monthly Cost</h2>
+            <p>Choose your bin size and how often you need pickups to see an instant estimate.</p>
+        </div>
+        <div class="calc-card reveal d1" id="costCalc">
+            <div class="calc-grid">
+                <div class="field">
+                    <label for="calcBin">Bin size</label>
+                    <select id="calcBin">
+                        <option value="5">10L — GHC 5 / pickup</option>
+                        <option value="8">20L — GHC 8 / pickup</option>
+                        <option value="12">30L — GHC 12 / pickup</option>
+                        <option value="15">50L — GHC 15 / pickup</option>
+                        <option value="20">60L — GHC 20 / pickup</option>
+                        <option value="35" selected>120L — GHC 35 / pickup</option>
+                        <option value="50">240L — GHC 50 / pickup</option>
+                        <option value="70">360L — GHC 70 / pickup</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="calcFreq">Pickup frequency</label>
+                    <select id="calcFreq">
+                        <option value="4" selected>Weekly (4 / month)</option>
+                        <option value="8">Twice a week (8 / month)</option>
+                        <option value="2">Bi-weekly (2 / month)</option>
+                        <option value="1">Monthly (1 / month)</option>
+                        <option value="30">Daily (30 / month)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="calc-result">
+                <div class="label">Estimated monthly cost</div>
+                <div class="amount" id="calcAmount">GHC 140 <small>/ month</small></div>
+                <div class="breakdown" id="calcBreakdown"></div>
+            </div>
+            <p class="calc-note">Estimate only — excludes one-time registration and your FREE first pickup. <a href="register-now.html" class="text-accent"><strong>Register now</strong></a></p>
+        </div>
     </div>
 </section>
 
@@ -284,6 +347,43 @@
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p>"Their community clean-up brought the whole neighbourhood together. Truly impactful work."</p>
                 <div class="who"><div class="avatar">E</div><div><b>Esi Boateng</b><span>Community Leader</span></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section bins">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about getting started with QuickPick.</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <button class="faq-q" type="button">How do I register? <i class="fa-solid fa-plus"></i></button>
+                <div class="faq-a"><p>Fill our quick registration form (it sends straight to our WhatsApp) or download and print the full form. Once registered, we deliver a free durable bin to your doorstep.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" type="button">How much does it cost? <i class="fa-solid fa-plus"></i></button>
+                <div class="faq-a"><p>There's a one-time registration (GHC 100 for the 120L package, GHC 170 for 240L) plus a per-pickup price based on your bin size, ranging from GHC 5 (10L) to GHC 70 (360L). Your first pickup is always FREE.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" type="button">Which areas do you cover? <i class="fa-solid fa-plus"></i></button>
+                <div class="faq-a"><p>We serve Abuakwa and surrounding communities in Kumasi (Atwima Nwabiagya Municipal). Not sure if we reach you? Message us on WhatsApp and we'll confirm.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" type="button">How can I pay? <i class="fa-solid fa-plus"></i></button>
+                <div class="faq-a"><p>We accept Cash, Mobile Money and Bank Transfer, with flexible monthly, quarterly or annual payment plans.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" type="button">How often will you collect my waste? <i class="fa-solid fa-plus"></i></button>
+                <div class="faq-a"><p>As often as you need — daily, weekly, bi-weekly, monthly, or on call. You choose the schedule that works for you.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" type="button">I already have a dustbin — can I still register? <i class="fa-solid fa-plus"></i></button>
+                <div class="faq-a"><p>Absolutely. Register your own bin for just GHC 50 and your first pickup is free. Per-pickup prices stay the same for each bin size.</p></div>
             </div>
         </div>
     </div>

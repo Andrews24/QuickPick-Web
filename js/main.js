@@ -118,6 +118,86 @@
         });
     }
 
+    /* ---- Launch countdown ---- */
+    var cd = document.querySelector("#countdown");
+    if (cd) {
+        var target = new Date(cd.getAttribute("data-target")).getTime();
+        var elD = cd.querySelector("[data-d]"),
+            elH = cd.querySelector("[data-h]"),
+            elM = cd.querySelector("[data-m]"),
+            elS = cd.querySelector("[data-s]");
+        function pad(n) { return n < 10 ? "0" + n : "" + n; }
+        function tick() {
+            var diff = target - Date.now();
+            if (diff <= 0) {
+                cd.innerHTML =
+                    '<div class="countdown-live"><h3>🎉 We\'re Live! QuickPick is now serving your community.</h3></div>';
+                clearInterval(timer);
+                return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            if (elD) elD.textContent = d;
+            if (elH) elH.textContent = pad(h);
+            if (elM) elM.textContent = pad(m);
+            if (elS) elS.textContent = pad(s);
+        }
+        tick();
+        var timer = setInterval(tick, 1000);
+    }
+
+    /* ---- Cost calculator ---- */
+    var calc = document.querySelector("#costCalc");
+    if (calc) {
+        var binSel = calc.querySelector("#calcBin");
+        var freqSel = calc.querySelector("#calcFreq");
+        var amountEl = calc.querySelector("#calcAmount");
+        var breakdownEl = calc.querySelector("#calcBreakdown");
+        function recalc() {
+            var price = parseFloat(binSel.value) || 0;
+            var perMonth = parseFloat(freqSel.value) || 0;
+            var total = price * perMonth;
+            amountEl.innerHTML = "GHC " + total + " <small>/ month</small>";
+            var binText = binSel.options[binSel.selectedIndex].text;
+            var freqText = freqSel.options[freqSel.selectedIndex].text;
+            breakdownEl.textContent =
+                binText + " · " + freqText + " (GHC " + price + " × " + perMonth + " pickups)";
+        }
+        binSel.addEventListener("change", recalc);
+        freqSel.addEventListener("change", recalc);
+        recalc();
+    }
+
+    /* ---- FAQ accordion ---- */
+    document.querySelectorAll(".faq-q").forEach(function (q) {
+        q.addEventListener("click", function () {
+            var item = q.closest(".faq-item");
+            var answer = item.querySelector(".faq-a");
+            var isOpen = item.classList.toggle("open");
+            answer.style.maxHeight = isOpen ? answer.scrollHeight + "px" : null;
+        });
+    });
+
+    /* ---- Quick register → WhatsApp ---- */
+    var quickReg = document.querySelector("#quickRegForm");
+    if (quickReg) {
+        quickReg.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var d = new FormData(quickReg);
+            var msg =
+                "*QuickPick Registration Request*%0A%0A" +
+                "Name: " + (d.get("name") || "") + "%0A" +
+                "Phone: " + (d.get("phone") || "") + "%0A" +
+                "Service: " + (d.get("service") || "") + "%0A" +
+                "Bin size: " + (d.get("bin") || "") + "%0A" +
+                "Frequency: " + (d.get("frequency") || "") + "%0A" +
+                "Area / Location: " + (d.get("location") || "");
+            window.open("https://wa.me/233249172520?text=" + msg, "_blank");
+        });
+    }
+
     /* ---- Contact / register form (mailto fallback) ---- */
     var form = document.querySelector("#registerForm");
     if (form) {

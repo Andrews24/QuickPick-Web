@@ -38,9 +38,36 @@
 
 <section class="form-page">
     <div class="container">
+        <!-- Quick register (instant, via WhatsApp) -->
+        <div class="quick-reg no-print" id="quickReg">
+            <h2><i class="fa-brands fa-whatsapp"></i> Quick Register</h2>
+            <p class="qr-sub">The fastest way to sign up — fill these few details and we'll receive them instantly on WhatsApp. No printing needed.</p>
+            <form id="quickRegForm">
+                <div class="qr-grid">
+                    <div class="field"><label for="qrName">Full Name</label><input id="qrName" name="name" type="text" placeholder="Your name" required></div>
+                    <div class="field"><label for="qrPhone">Phone Number</label><input id="qrPhone" name="phone" type="tel" placeholder="+233 ..." required></div>
+                    <div class="field"><label for="qrService">Service Type</label>
+                        <select id="qrService" name="service"><option>Residential</option><option>Commercial</option></select>
+                    </div>
+                    <div class="field"><label for="qrBin">Bin Size</label>
+                        <select id="qrBin" name="bin">
+                            <option>10L</option><option>20L</option><option>30L</option><option>50L</option>
+                            <option>60L</option><option selected>120L</option><option>240L</option><option>360L</option>
+                            <option>I already have a bin</option>
+                        </select>
+                    </div>
+                    <div class="field"><label for="qrFreq">Pickup Frequency</label>
+                        <select id="qrFreq" name="frequency"><option>Daily</option><option selected>Weekly</option><option>Bi-Weekly</option><option>Monthly</option><option>On Call</option></select>
+                    </div>
+                    <div class="field"><label for="qrLoc">Area / Location</label><input id="qrLoc" name="location" type="text" placeholder="e.g. Abuakwa"></div>
+                </div>
+                <button type="submit" class="btn btn-accent" style="margin-top:10px"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
+            </form>
+        </div>
+
         <div class="reg-card">
-            <h2 class="section-head" style="margin-bottom:6px;text-align:center;font-size:2rem;font-weight:800">Customer Registration Form</h2>
-            <p class="intro"><i class="fa-brands fa-whatsapp text-accent"></i> Kindly download / print, fill it in, and send it to us on WhatsApp.</p>
+            <h2 class="section-head" style="margin-bottom:6px;text-align:center;font-size:2rem;font-weight:800">Detailed Registration Form</h2>
+            <p class="intro"><i class="fa-solid fa-print text-accent"></i> Prefer a printed copy or need the full agreement? Fill this in, then download / print it and send it to us on WhatsApp.</p>
 
             <form id="registrationForm">
                 <!-- 1. Customer details -->
