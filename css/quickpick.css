@@ -722,6 +722,16 @@ ul{list-style:none;}
     color:var(--body);
 }
 .feature-list li i{color:var(--green-400);font-size:1.05rem;}
+
+/* Map embed */
+.map-embed{
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+    line-height:0;
+}
+.map-embed iframe{display:block;width:100%;}
 .mv-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
