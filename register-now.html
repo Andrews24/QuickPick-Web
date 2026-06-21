@@ -1,536 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QuickPick Customer Registration Form</title>
- 
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration | QuickPick Waste Management Services</title>
+    <meta name="description" content="Register for QuickPick waste collection. Download, fill and send the form to us on WhatsApp.">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
-body{
-    background:#f4f4f4;
-    padding:30px;
-}
-
-header{
-      background: #004d29;
-      color: white;
-      text-align: center;
-      padding: 30px;             
-    }
-
-.form-container{
-    max-width:1100px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-}
-
-h1{
-    text-align:center;
-    color:#004d29;
-    margin-bottom:30px;
-}
-
-.section{
-    border:2px solid #0b5d2a;
-    border-radius:12px;
-    margin-bottom:25px;
-    padding:20px;
-}
-
-.section-title{
-    background:#0b5d2a;
-    color:white;
-    padding:10px 20px;
-    border-radius:8px;
-    display:inline-block;
-    margin-bottom:20px;
-    font-weight:bold;
-}
-
-.grid-2{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.grid-3{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:5px;
-}
-
-input, select{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
-}
-
-.checkbox-group{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.checkbox-group label{
-    font-weight:normal;
-}
-
-.terms-box{
-    line-height: 1.8;
-    color: #333;
-    padding: 10px;
-}
-
-.terms-box p{
-    margin-bottom: 10px;
-}
-
-.terms-box strong{
-    color: #004d29;
-}
-
-textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
-}
-
-.download-btn{
-    background:#f39c12;
-    color:white;
-    border:none;
-    padding:15px 30px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:18px;
-}
-
-.download-btn:hover{
-    background:#d68910;
-}
-
-.footer-contact{
-    margin-top:30px;
-    background:#004d29;
-    color:white;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-}
-
-@media(max-width:768px){
-
-.grid-2{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-.grid-3{
-    grid-template-columns:1fr;
-}
-}
-
-@page {
-    size: A4 portrait;
-    margin: 8mm;
-}
-
-@media print {
-
-    body{
-        background:white;
-        margin:0;
-        padding:0;
-    }
-
-    .form-container{
-        width:100%;
-        max-width:100%;
-        padding:5px;
-        box-shadow:none;
-        border:none;
-    }
-
-    h1{
-        font-size:24px;
-        margin-bottom:10px;
-    }
-
-    .section{
-        padding:8px;
-        margin-top: 12px;
-    }
-
-    .section-title{
-        padding:5px 12px;
-        font-size:14px;
-    }
-
-    label{
-        font-size:12px;
-    }
-
-    input,
-    select,
-    textarea{
-        padding:4px;
-        font-size:12px;
-        height:auto;
-    }
-
-    .checkbox-group{
-        gap:10px;
-    }
-
-    .footer-contact{
-        padding:10px;
-        font-size:12px;
-    }
-
-    .download-btn{
-        display:none;
-    }
-
-    .terms-box{
-        font-size:12px;
-        line-height:1.3;
-    }
-}
-
-
-</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/quickpick.css">
 </head>
-
 <body>
 
-<div class="form-container">
- 
-<h1>CUSTOMER REGISTRATION FORM</h1>
-<p><strong>Kindly download, fill it and send it to us on whatsapp</strong></p>
-
-<form id="registrationForm">
-
-<!-- CUSTOMER DETAILS -->
-
-<div class="section">
-
-<div class="section-title">
-1. CUSTOMER DETAILS
-</div>
-
-<div class="grid-2">
-
-<div>
-<label>Full Name</label>
-<input type="text">
-</div>
-
-<div>
-<label>Phone Number</label>
-<input type="tel">
-</div>
-
-<div>
-<label>Alternative Contact</label>
-<input type="tel">
-</div>
-
-<div>
-<label>Email Address</label>
-<input type="email">
-</div>
-
-<div>
-<label>House / Business Number</label>
-<input type="text">
-</div>
-
-<div>
-<label>Address / Location</label>
-<input type="text">
-</div>
-
-</div>
-
-<br>
-
-<label>GPS / Landmark</label>
-<input type="text">
-
-</div>
-
-<!-- SERVICE INFORMATION -->
-
-<div class="section">
-
-<div class="section-title">
-2. SERVICE INFORMATION
-</div>
-
-<label>Service Type</label>
-
-<div class="checkbox-group">
-<label><input type="checkbox"> Residential</label>
-<label><input type="checkbox"> Commercial</label>
-</div>
-
-<br>
-
-<label>Bin Size / Package</label>
-
-<div class="checkbox-group">
-
-<label><input type="checkbox"> 10L</label>
-<label><input type="checkbox"> 20L</label>
-<label><input type="checkbox"> 30L</label>
-<label><input type="checkbox"> 50L</label>
-<label><input type="checkbox"> 60L</label>
-<label><input type="checkbox"> 120L</label>
-<label><input type="checkbox"> 240L</label>
-<label><input type="checkbox"> 360L</label>
-
-</div>
-
-<br>
-
-<label>Collection Frequency</label>
-
-<div class="checkbox-group">
-<label><input type="checkbox"> Daily</label>
-<label><input type="checkbox"> Weekly</label>
-<label><input type="checkbox"> Bi-Weekly</label>
-<label><input type="checkbox"> Monthly</label>
-<label><input type="checkbox"> On Call</label>
-</div>
-
-<br>
-
-<label>Preferred Collection Time</label>
-<input type="text">
-
-</div>
-
-<!-- PAYMENT -->
-
-<div class="section">
-
-<div class="section-title">
-3. PAYMENT INFORMATION
-</div>
-
-<label>Payment Method</label>
-
-<div class="checkbox-group">
-<label><input type="checkbox"> Cash</label>
-<label><input type="checkbox"> Mobile Money</label>
-<label><input type="checkbox"> Bank Transfer</label>
-<label><input type="checkbox"> Other</label>
-</div>
-
-<br>
-
-<label>Payment Plan</label>
-
-<div class="checkbox-group">
-<label><input type="checkbox"> Monthly</label>
-<label><input type="checkbox"> Quarterly</label>
-<label><input type="checkbox"> Annually</label>
-<label><input type="checkbox"> Other</label>
-</div>
-
-<br>
-
-<label>Account / Reference</label>
-<input type="text">
-
-</div>
-
-<!-- PENALTIES CLAUSE -->
-
-<div class="section">
-
-    <div class="section-title">
-     4. PENALTIES CLAUSE
-    </div>
-
-    <div class="terms-box">
-
-        <p>
-            Failure for <strong>QuickPick Waste Management Services</strong>
-            to carry out duty after <strong>72 hours</strong> of agreed
-            service collection time or call, <strong>shall attract a penalty of
-            25% refund or subtraction from service payment</strong>,
-            except in cases of accidents, rain, and related health problems
-            affecting field agents.
-        </p>
-
-        <br>
-
-        <p>
-            Failure by customers to fulfill payment obligations consistently
-            for <strong>3 months</strong> constitutes automatic contract
-            termination and legal action may be taken to recover service
-            payments with interest through our legal aide.
-        </p>
-
-    </div>
-
-</div>
-
-<!-- DECLARATION & SIGNATURE -->
-
-<div class="section">
-
-    <div class="section-title">
-        5. DECLARATION & SIGNATURE
-    </div>
-
-    <div class="terms-box">
-
-        <p>
-            I hereby declare that the information provided is accurate
-            and I agree to abide by the terms and conditions of
-            <strong>QuickPick Waste Management Services.</strong>
-        </p>
-
-        <br>
-
-        <div class="grid-2">
-
-            <div>
-                <label>Customer Full Name</label>
-                <input type="text">
-            </div>
-
-            <div>
-                <label>Date</label>
-                <input type="date">
-            </div>
-
+<!-- ===== Header ===== -->
+<header class="site-header no-print">
+    <div class="container navbar">
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="QuickPick Services logo">
+            <span class="brand-name">QuickPick<small>SERVICES</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#bins">Bin Sizes</a>
+            <a href="community-clean-ups.html">Clean-Ups</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-cta">
+            <a href="tel:+233249172520" class="nav-phone"><i class="fa-solid fa-phone"></i> +233 249 172 520</a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
         </div>
-
-        <br>
-
-        <label>Customer Signature</label>
-        <input type="text">
-
     </div>
+</header>
 
-</div>
+<section class="form-page">
+    <div class="container">
+        <div class="reg-card">
+            <h2 class="section-head" style="margin-bottom:6px;text-align:center;font-size:2rem;font-weight:800">Customer Registration Form</h2>
+            <p class="intro"><i class="fa-brands fa-whatsapp text-accent"></i> Kindly download / print, fill it in, and send it to us on WhatsApp.</p>
 
-<!-- REGISTRATION -->
+            <form id="registrationForm">
+                <!-- 1. Customer details -->
+                <div class="reg-section">
+                    <div class="reg-section-title"><i class="fa-solid fa-user"></i> 1. Customer Details</div>
+                    <div class="grid-2">
+                        <div><label>Full Name</label><input type="text"></div>
+                        <div><label>Phone Number</label><input type="tel"></div>
+                        <div><label>Alternative Contact</label><input type="tel"></div>
+                        <div><label>Email Address</label><input type="email"></div>
+                        <div><label>House / Business Number</label><input type="text"></div>
+                        <div><label>Address / Location</label><input type="text"></div>
+                    </div>
+                    <div class="spacer"></div>
+                    <label>GPS / Landmark</label><input type="text">
+                </div>
 
-<div class="section">
+                <!-- 2. Service information -->
+                <div class="reg-section">
+                    <div class="reg-section-title"><i class="fa-solid fa-truck"></i> 2. Service Information</div>
+                    <label>Service Type</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Residential</label>
+                        <label><input type="checkbox"> Commercial</label>
+                    </div>
+                    <div class="spacer"></div>
+                    <label>Bin Size / Package</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> 10L</label>
+                        <label><input type="checkbox"> 20L</label>
+                        <label><input type="checkbox"> 30L</label>
+                        <label><input type="checkbox"> 50L</label>
+                        <label><input type="checkbox"> 60L</label>
+                        <label><input type="checkbox"> 120L</label>
+                        <label><input type="checkbox"> 240L</label>
+                        <label><input type="checkbox"> 360L</label>
+                    </div>
+                    <div class="spacer"></div>
+                    <label>Collection Frequency</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Daily</label>
+                        <label><input type="checkbox"> Weekly</label>
+                        <label><input type="checkbox"> Bi-Weekly</label>
+                        <label><input type="checkbox"> Monthly</label>
+                        <label><input type="checkbox"> On Call</label>
+                    </div>
+                    <div class="spacer"></div>
+                    <label>Preferred Collection Time</label><input type="text">
+                </div>
 
-<div class="section-title">
-5. REGISTRATION CONFIRMATION
-</div>
+                <!-- 3. Payment -->
+                <div class="reg-section">
+                    <div class="reg-section-title"><i class="fa-solid fa-money-bill-wave"></i> 3. Payment Information</div>
+                    <label>Payment Method</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Cash</label>
+                        <label><input type="checkbox"> Mobile Money</label>
+                        <label><input type="checkbox"> Bank Transfer</label>
+                        <label><input type="checkbox"> Other</label>
+                    </div>
+                    <div class="spacer"></div>
+                    <label>Payment Plan</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Monthly</label>
+                        <label><input type="checkbox"> Quarterly</label>
+                        <label><input type="checkbox"> Annually</label>
+                        <label><input type="checkbox"> Other</label>
+                    </div>
+                    <div class="spacer"></div>
+                    <label>Account / Reference</label><input type="text">
+                </div>
 
-<div class="grid-2">
+                <!-- 4. Penalties -->
+                <div class="reg-section">
+                    <div class="reg-section-title"><i class="fa-solid fa-gavel"></i> 4. Penalties Clause</div>
+                    <div class="terms-box">
+                        <p>Failure for <strong>QuickPick Waste Management Services</strong> to carry out duty after <strong>72 hours</strong> of agreed service collection time or call, <strong>shall attract a penalty of 25% refund or subtraction from service payment</strong>, except in cases of accidents, rain, and related health problems affecting field agents.</p>
+                        <p>Failure by customers to fulfill payment obligations consistently for <strong>3 months</strong> constitutes automatic contract termination and legal action may be taken to recover service payments with interest through our legal aide.</p>
+                    </div>
+                </div>
 
-<div>
-<label>Registration Date</label>
-<input type="date">
-</div>
+                <!-- 5. Declaration -->
+                <div class="reg-section">
+                    <div class="reg-section-title"><i class="fa-solid fa-signature"></i> 5. Declaration &amp; Signature</div>
+                    <div class="terms-box">
+                        <p>I hereby declare that the information provided is accurate and I agree to abide by the terms and conditions of <strong>QuickPick Waste Management Services.</strong></p>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="grid-2">
+                        <div><label>Customer Full Name</label><input type="text"></div>
+                        <div><label>Date</label><input type="date"></div>
+                    </div>
+                    <div class="spacer"></div>
+                    <label>Customer Signature</label><input type="text">
+                </div>
 
-<div>
-<label>Customer Signature</label>
-<input type="text">
-</div>
+                <!-- 6. Confirmation -->
+                <div class="reg-section">
+                    <div class="reg-section-title"><i class="fa-solid fa-circle-check"></i> 6. Registration Confirmation</div>
+                    <div class="grid-2">
+                        <div><label>Registration Date</label><input type="date"></div>
+                        <div><label>Customer Signature</label><input type="text"></div>
+                    </div>
+                </div>
 
-</div>
+                <!-- 7. Official use -->
+                <div class="reg-section">
+                    <div class="reg-section-title official"><i class="fa-solid fa-lock"></i> 7. Official Use Only</div>
+                    <div class="grid-2">
+                        <div><label>Customer ID</label><input type="text"></div>
+                        <div><label>Assigned Route / Area</label><input type="text"></div>
+                        <div><label>Sales Officer Name</label><input type="text"></div>
+                        <div><label>Date</label><input type="date"></div>
+                    </div>
+                    <div class="spacer"></div>
+                    <label>Notes</label><textarea rows="4"></textarea>
+                </div>
 
-</div>
+                <div style="text-align:center" class="no-print">
+                    <button type="button" class="btn btn-accent" onclick="window.print()"><i class="fa-solid fa-download"></i> Download / Print Form</button>
+                    <a href="https://wa.me/233249172520" class="btn btn-primary" style="margin-left:10px"><i class="fa-brands fa-whatsapp"></i> Send on WhatsApp</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
-<!-- OFFICIAL USE -->
+<!-- ===== Footer ===== -->
+<footer class="site-footer no-print">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="QuickPick Services logo">
+                    <span class="brand-name" style="color:#fff">QuickPick<small>SERVICES</small></span>
+                </a>
+                <p>Professional waste collection, recycling and environmental sanitation services. Clean today, green tomorrow.</p>
+                <div class="footer-social">
+                    <a href="https://whatsapp.com/channel/0029VbCp4rj9Gv7VaK8Zg30S" aria-label="WhatsApp Channel"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@quickpick.service?_r=1&_t=ZS-97LsqGVy0bE" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="mailto:qpghana26@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+233249172520" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="community-clean-ups.html">Community Clean-Ups</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Register</h4>
+                <ul>
+                    <li><a href="register-now.html">Customer Registration</a></li>
+                    <li><a href="other-packages.html">All Bin Sizes</a></li>
+                    <li><a href="already-have.html">Already Have a Bin?</a></li>
+                    <li><a href="index.html#bins">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> Abuakwa, Kumasi, Atwima Nwabiagya Municipal, Ghana</li>
+                    <li><i class="fa-solid fa-phone"></i> +233 249 172 520 / +233 249 169 311</li>
+                    <li><i class="fa-solid fa-envelope"></i> qpghana26@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span data-year>2026</span> QuickPick Waste Management Services. All rights reserved.</span>
+            <span>Clean Today, Green Tomorrow 🌍</span>
+        </div>
+    </div>
+</footer>
 
-<div class="section">
-
-<div class="section-title" style="background:#d4a017;">
-6. OFFICIAL USE ONLY
-</div>
-
-<div class="grid-2">
-
-<div>
-<label>Customer ID</label>
-<input type="text">
-</div>
-
-<div>
-<label>Assigned Route / Area</label>
-<input type="text">
-</div>
-
-<div>
-<label>Sales Officer Name</label>
-<input type="text">
-</div>
-
-<div>
-<label>Date</label>
-<input type="date">
-</div>
-
-</div>
-
-<br>
-
-<label>Notes</label>
-<textarea rows="4"></textarea>
-
-</div>
-
-<center>
-
-<button 
-type="button"
-class="download-btn"
-onclick="window.print()">
-
-Download / Print Form
-
-</button>
-
-</center>
-
-</form>
-
-<div class="footer-contact">
-
-📍 Abuakwa-Kumasi
-
-&nbsp;&nbsp;|&nbsp;&nbsp;
-
-📞 0249169311 / 0249172520
-
-&nbsp;&nbsp;|&nbsp;&nbsp;
-
-📧 qpghana26@gmail.com
-
-</div>
-
-</div>
-<a href="index.html">Back To Home</a>
-
+<script src="js/main.js"></script>
 </body>
 </html>

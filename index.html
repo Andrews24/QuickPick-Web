@@ -1,250 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>QuickPick Services</title>
-        <link rel="stylesheet" href="css/quickpick.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickPick Waste Management Services | Clean Today, Green Tomorrow</title>
+    <meta name="description" content="Professional waste collection, recycling and environmental sanitation services in Kumasi, Ghana. Reliable household & commercial pickups, durable bins from 10L to 360L.">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    </head>
-    <body>
-        <div id="launchPopup" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup()">&times;</span>
-                 <img src="images/launch2.jpeg" alt="Launch Poster">
-            </div>
-        </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/quickpick.css">
+</head>
+<body>
 
-    <header>
-        <div class="logo-box">
-            <img src="images/logo.png" alt="QuickPick">
-        </div>
+<!-- ===== Launch popup ===== -->
+<div id="launchPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" data-close-popup aria-label="Close">&times;</span>
+        <img src="images/launch2.jpeg" alt="QuickPick official launch — Monday, 20th July 2026">
+    </div>
+</div>
 
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#packages">Packages</a></li>
-                <li><a href="#why-choose-us">Why Choose us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<!-- Reusable SVG bin graphic -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="binIcon" viewBox="0 0 100 116">
+        <defs>
+            <linearGradient id="binG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#7fd321"/>
+                <stop offset="1" stop-color="#2f8c2c"/>
+            </linearGradient>
+        </defs>
+        <rect x="40" y="2" width="20" height="8" rx="3" fill="#1f5d20"/>
+        <rect x="18" y="9" width="64" height="13" rx="5" fill="#3b9d2f"/>
+        <path d="M23 24 H77 L72 104 a4 4 0 0 1-4 4 H32 a4 4 0 0 1-4-4 Z" fill="url(#binG)"/>
+        <g stroke="rgba(255,255,255,.4)" stroke-width="2.5" stroke-linecap="round">
+            <line x1="38" y1="34" x2="36" y2="98"/>
+            <line x1="50" y1="34" x2="50" y2="98"/>
+            <line x1="62" y1="34" x2="64" y2="98"/>
+        </g>
+        <circle cx="34" cy="112" r="5" fill="#15321f"/>
+        <circle cx="66" cy="112" r="5" fill="#15321f"/>
+    </symbol>
+</svg>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+    <div class="container navbar">
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="QuickPick Services logo">
+            <span class="brand-name">QuickPick<small>SERVICES</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#bins">Bin Sizes</a>
+            <a href="community-clean-ups.html">Clean-Ups</a>
+            <a href="contact.html">Contact</a>
         </nav>
+        <div class="nav-cta">
+            <a href="tel:+233249172520" class="nav-phone"><i class="fa-solid fa-phone"></i> +233 249 172 520</a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </div>
+</header>
 
-        <a href="https://wa.me/233249172520" class="whatsapp-btn">
-            <i class="fa-brands fa-whatsapp"></i>
-            +233 249 172 520
-        </a>
-
-    </header>
-
-    <section class="hero">
-        <div class="overlay">
-            <div class="hero-content">
-
-            <h1>
-                Keeping Our <br>
-                Community Clean <br>
-                <span> & Safe</span>
-            </h1>
-
-            <p>Professional waste collection,
-                recycling and environmental 
-                sanitation services for a cleaner, 
-                healthier and safer future.
-            </p>
-            
-            <div class="buttons">
-
-                <a href="register-now.html" class="btn green">
-                    Register Now
-                </a>
-
-                <a href="#contact" class="btn dark">
-                    Contact Us
-                </a>
-
+<!-- ===== Hero ===== -->
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text reveal">
+            <span class="hero-badge"><i class="fa-solid fa-leaf"></i> Strong · Durable · Reliable</span>
+            <h1>Keeping Our Community <span>Clean &amp; Green</span></h1>
+            <p class="lead">Professional waste collection, recycling and environmental sanitation services for a cleaner, healthier and safer future across Ghana.</p>
+            <div class="hero-actions">
+                <a href="register-now.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Register Now</a>
+                <a href="index.html#bins" class="btn btn-ghost"><i class="fa-solid fa-tags"></i> View Pricing</a>
             </div>
-
-            <div class="launch">
+            <div class="hero-stats">
+                <div class="stat"><strong>8</strong><span>Bin sizes available</span></div>
+                <div class="stat"><strong>FREE</strong><span>First pickup &amp; bin</span></div>
+                <div class="stat"><strong>20 Jul<br>2026</strong><span>Official launch</span></div>
+            </div>
+        </div>
+        <div class="hero-visual reveal d1">
+            <div class="photo-frame">
+                <img src="images/truck.jpg" alt="QuickPick waste collection truck">
+            </div>
+            <div class="hero-float f1">
+                <i class="fa-solid fa-recycle"></i>
+                <div><strong>Recycling</strong><span>Waste to value</span></div>
+            </div>
+            <div class="hero-float f2">
                 <i class="fa-solid fa-calendar-days"></i>
-                Official Launch:
-                <strong> Monday, 20th July 2026</strong>
+                <div><strong>Launch</strong><span>Mon, 20 Jul 2026</span></div>
             </div>
         </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="currentColor" d="M0,40 C240,80 480,0 720,24 C960,48 1200,90 1440,48 L1440,80 L0,80 Z"></path></svg>
+</section>
+
+<!-- ===== Trust strip ===== -->
+<section class="trust">
+    <div class="container trust-grid">
+        <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><div><b>Heavy Duty</b><small>Built to last</small></div></div>
+        <div class="trust-item"><i class="fa-solid fa-leaf"></i><div><b>Eco-Friendly</b><small>Greener communities</small></div></div>
+        <div class="trust-item"><i class="fa-solid fa-sun"></i><div><b>UV Resistant</b><small>Weather-proof bins</small></div></div>
+        <div class="trust-item"><i class="fa-solid fa-clock"></i><div><b>Reliable</b><small>Consistent service</small></div></div>
+    </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-handshake-angle"></i> What we do</span>
+            <h2>Complete Waste Management Solutions</h2>
+            <p>From households to large institutions, we deliver dependable sanitation services tailored to your needs.</p>
         </div>
-        
-        <div class="hero-image">
-            <img src="images/truck.jpg" alt="Waste Collection Truck">
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                <h3>Household Collection</h3>
+                <p>Reliable waste collection for homes and communities, on a schedule you can count on.</p>
+            </div>
+            <div class="service-card reveal d1">
+                <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>Commercial Collection</h3>
+                <p>Customized waste solutions for businesses, schools and institutions of every size.</p>
+            </div>
+            <div class="service-card reveal d2">
+                <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+                <h3>Community Clean-Ups</h3>
+                <p>Organized sanitation programmes that keep neighbourhoods cleaner and healthier.</p>
+                <a href="community-clean-ups.html" class="more">See projects <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+            <div class="service-card reveal d3">
+                <div class="service-icon"><i class="fa-solid fa-recycle"></i></div>
+                <h3>Recycling Programs</h3>
+                <p>Turning everyday waste into valuable products for a circular, sustainable economy.</p>
+            </div>
         </div>
+    </div>
+</section>
 
-    </section>
-
-    <section id="services" class="services">
-
-        <div class="service">
-            <i class="fas fa-home"></i>
-            <h3>Household Collection</h3>
-            <p>Relaible waste collection for homes and communities.</p>
+<!-- ===== Bin sizes & pricing ===== -->
+<section class="section bins" id="bins">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-trash-can"></i> Bin sizes &amp; pricing</span>
+            <h2>Pick the Perfect Bin for You</h2>
+            <p>Strong, UV-resistant bins in eight sizes. Transparent pricing — pay only per full pickup.</p>
         </div>
-        <div class="service">
-            <i class="fas fa-building"></i>
-            <h3>Commercial Collection</h3>
-            <p>Customized solution for businesses and institutions.</p>
+        <div class="bin-grid">
+            <div class="bin-card reveal"><div class="bin-size">10L</div><svg class="bin-svg"><use href="#binIcon"/></svg><div class="bin-price"><span class="cur">GHC</span> <span class="amt">5</span><span class="per">per full pickup</span></div></div>
+            <div class="bin-card reveal d1"><div class="bin-size">20L</div><svg class="bin-svg"><use href="#binIcon"/></svg><div class="bin-price"><span class="cur">GHC</span> <span class="amt">8</span><span class="per">per full pickup</span></div></div>
+            <div class="bin-card reveal d2"><div class="bin-size">30L</div><svg class="bin-svg"><use href="#binIcon"/></svg><div class="bin-price"><span class="cur">GHC</span> <span class="amt">12</span><span class="per">per full pickup</span></div></div>
+            <div class="bin-card reveal d3"><div class="bin-size">50L</div><svg class="bin-svg"><use href="#binIcon"/></svg><div class="bin-price"><span class="cur">GHC</span> <span class="amt">15</span><span class="per">per full pickup</span></div></div>
+            <div class="bin-card reveal"><div class="bin-size">60L</div><svg class="bin-svg"><use href="#binIcon"/></svg><div class="bin-price"><span class="cur">GHC</span> <span class="amt">20</span><span class="per">per full pickup</span></div></div>
+            <div class="bin-card featured reveal d1"><span class="bin-tag">Most Popular</span><div class="bin-size">120L</div><svg class="bin-svg"><use href="#binIcon"/></svg><div class="bin-price"><span class="cur">GHC</span> <span class="amt">35</span><span class="per">per full pickup</span></div></div>
+            <div class="bin-card reveal d2"><div class="bin-size">240L</div><svg class="bin-svg"><use href="#binIcon"/></svg><div class="bin-price"><span class="cur">GHC</span> <span class="amt">50</span><span class="per">per full pickup</span></div></div>
+            <div class="bin-card reveal d3"><div class="bin-size">360L</div><svg class="bin-svg"><use href="#binIcon"/></svg><div class="bin-price"><span class="cur">GHC</span> <span class="amt">70</span><span class="per">per full pickup</span></div></div>
         </div>
-        <a href="community-clean-ups.html" class="service-link">
+        <p class="bin-note"><i class="fa-solid fa-circle-info text-accent"></i> See the full price chart on our <a href="other-packages.html" class="text-accent"><strong>packages page</strong></a>, or <a href="contact.html" class="text-accent"><strong>talk to our team</strong></a> to choose.</p>
+    </div>
+</section>
 
-        <div class="service">
-            <i class="fas fa-users"></i>
-            <h3>Community Clean-Ups</h3>
-            <p>Click to see some organized sanitation programs for cleaner neighborhoods.</p>
+<!-- ===== Registration packages ===== -->
+<section class="section packages" id="packages">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-box-open"></i> Registration packages</span>
+            <h2>Get Started With a Free Bin</h2>
+            <p>Register today and enjoy a free durable bin plus your first pickup on us.</p>
         </div>
-        </a>
-
-        <div class="service">
-            <i class="fas fa-recycle"></i>
-            <h3>Recycling Programs</h3>
-            <p>Turning waste into valuable products.</p>
-        </div>
-
-    </section>
-
-    <section id="packages" class="packages">
-
-        <h2>Our MAIN Registration Packages</h2>
-
-        <div class="package-grid">
-            <div class="package">
-                <img src="images/bin120.png" alt="120L Bin">
-                <h3>120L BIN PACKAGE</h3>
-
-                <div class="price">
-                    GHC <span>100</span>
-                </div>
-                <div class="pickup">
-                    GHC <span>35</span> per full pick-up 
-                </div>
-
+        <div class="package-grid" style="grid-template-columns:repeat(2,minmax(0,420px))">
+            <div class="package reveal">
+                <svg class="pkg-svg"><use href="#binIcon"/></svg>
+                <h3>120L Bin Package</h3>
+                <div class="reg-price"><span class="cur">GHC</span> <span class="amt">100</span></div>
+                <p class="sub">One-time registration · GHC 35 per full pickup</p>
                 <ul>
-                    <li>FREE 120L Bin</li>
-                    <li>First pickup is FREE</li>
-                    <li>Household Collection Service</li>
-                 </ul>
-                
-            </div>
-
-            <div class="package">
-                <img src="images/bin240.png" alt="240L Bin">
-                <h3>240L BIN PACKAGE</h3>
-
-                <div class="price">
-                    GHC <span>170</span>
-                </div>
-                <div class="pickup">
-                    GHC <span>50</span> per full pick-up
-                </div>
-
-                <ul>
-                    <li>FREE 240L Bin</li>
-                    <li>First pickup is FREE</li>
-                    <li>Large Capacity Collection</li>
-                 </ul>
-                
-            </div>
-             <div class="package">
-                <a href="other-packages.html" class="package-link">
-                <h3>CLICH HERE for our other <span>PACKAGES</span></h3>
-                </a>
-            </div>
-
-             <div class="already">
-                <a href="already-have.html" class="already-link">
-                 <h3><SPAN>ALREADY HAVE A DUSTBIN??</SPAN></h3>
-                 <p><strong>Click Here to Register @<span> 50ghc</span></strong></p>   
-                </a>
-
-                <ul>
-                    <li>Pick up prices remains the same for bin sizes</li>
-                    <li>First pickup is FREE</li>
+                    <li><i class="fa-solid fa-circle-check"></i> FREE 120L durable bin</li>
+                    <li><i class="fa-solid fa-circle-check"></i> First pickup is FREE</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Household collection service</li>
                 </ul>
-
+                <a href="register-now.html" class="btn btn-outline">Register Now</a>
             </div>
-
+            <div class="package popular reveal d1">
+                <span class="ribbon">Best Value</span>
+                <svg class="pkg-svg"><use href="#binIcon"/></svg>
+                <h3>240L Bin Package</h3>
+                <div class="reg-price"><span class="cur">GHC</span> <span class="amt">170</span></div>
+                <p class="sub">One-time registration · GHC 50 per full pickup</p>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i> FREE 240L large-capacity bin</li>
+                    <li><i class="fa-solid fa-circle-check"></i> First pickup is FREE</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Large capacity collection</li>
+                </ul>
+                <a href="register-now.html" class="btn btn-primary">Register Now</a>
             </div>
-
-    </section>
-
-    <section id="why-choose-us" class="why-choose-us">
-
-        <div class="why-choose">
-            <i class="fas fa-leaf"></i>
-        <h3>Cleaner Environment</h3>
-        <p>Reduce pollution and promote a healthier living space for everyone.</p>
         </div>
 
-        <div class="why-choose">
-            <i class="fas fa-users"></i>
-        <h3>Community Focused</h3>
-        <p>Creating cleaner communities together.</p>
+        <div class="package-grid" style="grid-template-columns:repeat(2,minmax(0,420px));margin-top:30px">
+            <div class="package reveal">
+                <div class="service-icon" style="margin:0 auto 14px"><i class="fa-solid fa-layer-group"></i></div>
+                <h3>Other Packages</h3>
+                <p class="sub" style="margin-bottom:18px">Explore the full range of bin sizes from 10L to 360L with our complete price chart.</p>
+                <a href="other-packages.html" class="btn btn-outline">View All Sizes</a>
+            </div>
+            <div class="package reveal d1">
+                <div class="service-icon" style="margin:0 auto 14px"><i class="fa-solid fa-trash-can"></i></div>
+                <h3>Already Have a Dustbin?</h3>
+                <div class="reg-price" style="margin:10px 0 2px"><span class="cur">GHC</span> <span class="amt">50</span></div>
+                <p class="sub">Register your own bin · First pickup is FREE</p>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i> Pickup prices stay the same per size</li>
+                    <li><i class="fa-solid fa-circle-check"></i> First pickup is FREE</li>
+                </ul>
+                <a href="already-have.html" class="btn btn-primary">Register @ GHC 50</a>
+            </div>
         </div>
+    </div>
+</section>
 
-        <div class="why-choose">
-            <i class="fas fa-shield-halved"></i>
-            <h3>Professional & Reliable</h3>
-            <p>Trust us for consistent and dependable waste management services.</p>
+<!-- ===== Awareness campaign ===== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-bullhorn"></i> Awareness</span>
+            <h2>Why Proper Waste Disposal Matters</h2>
+            <p>Indiscriminate dumping causes flooding, disease and harm to our environment. Together we can change that.</p>
         </div>
-
-        <div class="why-choose">
-            <i class="fas fa-dollar-sign"></i>
-            <h3>Affordable Rates</h3>
-            <p>Competitive and transparent pricing for all our services.</p>
+        <div class="campaign-grid">
+            <div class="campaign-card reveal">
+                <div class="img-wrap"><img src="images/dump.jpg.JPG" alt="Don't dump it — it doesn't disappear" data-lightbox="images/dump.jpg.JPG"></div>
+                <div class="cc-body"><h3>Don't Dump It</h3><p>Poor waste disposal blocks drains, causes flooding and harms wildlife.</p></div>
+            </div>
+            <div class="campaign-card reveal d1">
+                <div class="img-wrap"><img src="images/awareness.jpg.JPG" alt="Create awareness about waste" data-lightbox="images/awareness.jpg.JPG"></div>
+                <div class="cc-body"><h3>Create Awareness</h3><p>Small actions build a cleaner, healthier city for everyone.</p></div>
+            </div>
+            <div class="campaign-card reveal d2">
+                <div class="img-wrap"><img src="images/kma.jpg.JPG" alt="KMA tackles Kumasi filth — register with QuickPick" data-lightbox="images/kma.jpg.JPG"></div>
+                <div class="cc-body"><h3>Register &amp; Get a Free Bin</h3><p>Don't be a victim of poor sanitation — sign up with QuickPick today.</p></div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact" class="contact">
-
-        <h2>Contact Us</h2>
-
-        <p class="contact-text">
-            Do you have questions about services? Want to register for waste collection, 
-            schedule a pick-up, organize a community clean-up exercise?
-            Contact QuickPick Waste Management Services today. Our team is ready to assist you.
-        </p>
-
-        <div class="contact-details">
-            <p>
-                <i class="fas fa-phone"></i> 
-                <strong>Phone:</strong> +233 249 172 520 / +233 249 169 311
-            </p>
-            <p>
-              <a href="https://wa.me/233249172520" class="whatsapp-btn">
-            <i class="fa-brands fa-whatsapp"></i>
-            +233 249 172 520
-             </a> 
-            </p>
-            <p>
-              <i class="fas fa-earth-africa"></i>
-                <strong>Social Media:</strong> 
-                <a href="https://whatsapp.com/channel/0029VbCp4rj9Gv7VaK8Zg30S">WhatsApp </a>/ 
-                <a href="https://www.tiktok.com/@quickpick.service?_r=1&_t=ZS-97LsqGVy0bE">TikTok</a>
-            </p>
-            <p>
-                <i class="fas fa-envelope"></i>
-                <strong>Email:</strong>qpghana26@gmail.com
-            </p>
-
-            <p>
-                <i class="fas fa-map-marker-alt"></i>
-                <strong>Location:</strong> Abuakwa Kumasi, Atwima Nwabiagya Municipal, Ghana
-            </p>
+<!-- ===== How it works ===== -->
+<section class="section steps">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-list-check"></i> How it works</span>
+            <h2>Clean in Four Simple Steps</h2>
+            <p>Getting reliable waste collection has never been easier.</p>
         </div>
-    </section>
-          <script>
-        function closePopup() {
-            document.getElementById("launchPopup").style.display = "none";
-        }
-    </script>
+        <div class="steps-grid">
+            <div class="step reveal"><div class="step-num">1</div><h3>Register</h3><p>Sign up online or by phone and choose your preferred bin size.</p></div>
+            <div class="step reveal d1"><div class="step-num">2</div><h3>Get Your Bin</h3><p>We deliver a free, durable bin straight to your doorstep.</p></div>
+            <div class="step reveal d2"><div class="step-num">3</div><h3>We Collect</h3><p>Our team picks up your waste on schedule, every time.</p></div>
+            <div class="step reveal d3"><div class="step-num">4</div><h3>We Recycle</h3><p>Waste is sorted and recycled for a cleaner environment.</p></div>
+        </div>
+    </div>
+</section>
 
-    </body>
+<!-- ===== Why choose us ===== -->
+<section class="section why" id="why-choose-us">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-award"></i> Why choose us</span>
+            <h2>The QuickPick Difference</h2>
+            <p>We are committed to building cleaner, healthier communities you can trust.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card reveal"><i class="fa-solid fa-leaf"></i><h3>Cleaner Environment</h3><p>Reducing pollution and promoting healthier living spaces for everyone.</p></div>
+            <div class="why-card reveal d1"><i class="fa-solid fa-people-group"></i><h3>Community Focused</h3><p>Building cleaner communities together, one neighbourhood at a time.</p></div>
+            <div class="why-card reveal d2"><i class="fa-solid fa-shield-halved"></i><h3>Professional &amp; Reliable</h3><p>Consistent, dependable waste management services you can rely on.</p></div>
+            <div class="why-card reveal d3"><i class="fa-solid fa-hand-holding-dollar"></i><h3>Affordable Rates</h3><p>Competitive and transparent pricing across all our services.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-comment-dots"></i> Testimonials</span>
+            <h2>Trusted by Our Community</h2>
+            <p>Here's what residents and businesses say about working with QuickPick.</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial reveal">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Finally a waste service that actually shows up on time. My compound has never been cleaner."</p>
+                <div class="who"><div class="avatar">A</div><div><b>Ama Owusu</b><span>Abuakwa, Kumasi</span></div></div>
+            </div>
+            <div class="testimonial reveal d1">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"The free bin and first pickup made registering a no-brainer. Great value for our shop."</p>
+                <div class="who"><div class="avatar">K</div><div><b>Kwame Mensah</b><span>Local Business Owner</span></div></div>
+            </div>
+            <div class="testimonial reveal d2">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Their community clean-up brought the whole neighbourhood together. Truly impactful work."</p>
+                <div class="who"><div class="avatar">E</div><div><b>Esi Boateng</b><span>Community Leader</span></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA banner ===== -->
+<section class="cta-banner">
+    <div class="container">
+        <div class="cta-inner reveal">
+            <h2>Ready for a Cleaner Tomorrow?</h2>
+            <p>Join QuickPick today and be part of the movement keeping Ghana clean and green. Register for waste collection or organise a community clean-up.</p>
+            <div class="cta-actions">
+                <a href="register-now.html" class="btn btn-accent"><i class="fa-solid fa-user-plus"></i> Register Now</a>
+                <a href="https://wa.me/233249172520" class="btn btn-ghost"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="QuickPick Services logo">
+                    <span class="brand-name" style="color:#fff">QuickPick<small>SERVICES</small></span>
+                </a>
+                <p>Professional waste collection, recycling and environmental sanitation services. Clean today, green tomorrow.</p>
+                <div class="footer-social">
+                    <a href="https://whatsapp.com/channel/0029VbCp4rj9Gv7VaK8Zg30S" aria-label="WhatsApp Channel"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@quickpick.service?_r=1&_t=ZS-97LsqGVy0bE" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="mailto:qpghana26@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+233249172520" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="community-clean-ups.html">Community Clean-Ups</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Register</h4>
+                <ul>
+                    <li><a href="register-now.html">Customer Registration</a></li>
+                    <li><a href="other-packages.html">All Bin Sizes</a></li>
+                    <li><a href="already-have.html">Already Have a Bin?</a></li>
+                    <li><a href="index.html#bins">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> Abuakwa, Kumasi, Atwima Nwabiagya Municipal, Ghana</li>
+                    <li><i class="fa-solid fa-phone"></i> +233 249 172 520 / +233 249 169 311</li>
+                    <li><i class="fa-solid fa-envelope"></i> qpghana26@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span data-year>2026</span> QuickPick Waste Management Services. All rights reserved.</span>
+            <span>Clean Today, Green Tomorrow 🌍</span>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/233249172520" class="wa-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox"><span class="lb-close">&times;</span><img alt="Enlarged view"></div>
+
+<script src="js/main.js"></script>
+</body>
 </html>

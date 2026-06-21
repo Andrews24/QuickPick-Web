@@ -1,86 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About Us - QuickPick Services</title>
-        <link rel="stylesheet" href="css/quickpick.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | QuickPick Waste Management Services</title>
+    <meta name="description" content="QuickPick Waste Management Services is on a mission to solve environmental sanitation challenges and build cleaner, healthier communities across Ghana.">
 
-    <header>
-        <div class="logo-box">
-            <a href="index.html"><img src="images/logo.png" alt="QuickPick"></a>
-        </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/quickpick.css">
+</head>
+<body>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#packages">Packages</a></li>
-                <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <a href="https://wa.me/233249172520" class="whatsapp-btn">
-            <i class="fa-brands fa-whatsapp"></i>
-            +233 249 172 520
+<!-- ===== Header ===== -->
+<header class="site-header">
+    <div class="container navbar">
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="QuickPick Services logo">
+            <span class="brand-name">QuickPick<small>SERVICES</small></span>
         </a>
-
-    </header>
-        
-         <style>
-            .us{
-                 display: flex;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-               
-            }
-
-            .us img{
-                 width: 100%;
-                height: 1000px;
-                object-position: left;
-                border-radius: 10px;
-                cursor: pointer;
-            }
-
-            @media (max-width: 768px){
-           .us img{
-                   width: 90%;
-                 max-width: 350px;
-                  }
-                }
-        </style>
-        
-
-    <section class="about">
-        <h1>About QuickPick Waste Management Services</h1>
-
-        <p>
-            QuickPick Waste Management Services was established to help solve
-            environmental sanitation challenges and reduce flooding and other related
-            problems caused by indiscriminate refuse dumping in our communities.
-        </p>
-        
-         <div class="us">
-            <img src="images/us.png">
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#bins">Bin Sizes</a>
+            <a href="community-clean-ups.html">Clean-Ups</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-cta">
+            <a href="tel:+233249172520" class="nav-phone"><i class="fa-solid fa-phone"></i> +233 249 172 520</a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
         </div>
+    </div>
+</header>
 
-        <p>
-            We offer reliable waste collection services, recycling solutions,
-            community clean-up exercises and environmental awareness campaigns.
-        </p>
+<!-- ===== Page hero ===== -->
+<section class="page-hero">
+    <div class="container">
+        <h1>About QuickPick</h1>
+        <p>Driven by a simple belief: every community deserves to be clean, healthy and safe.</p>
+        <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
+    </div>
+</section>
 
-        <p>
-            Our vision is to become a leading waste management company that helps
-            build cleaner and healthier communities across Ghana.
-        </p>
+<!-- ===== Story ===== -->
+<section class="section">
+    <div class="container about-grid">
+        <div class="poster-frame reveal" data-lightbox="images/us.png">
+            <img src="images/us.png" alt="QuickPick Waste Management Services overview">
+        </div>
+        <div class="reveal d1">
+            <span class="eyebrow"><i class="fa-solid fa-seedling"></i> Our story</span>
+            <h2>Building Cleaner Communities Across Ghana</h2>
+            <p>QuickPick Waste Management Services was established to help solve environmental sanitation challenges and reduce flooding and other related problems caused by indiscriminate refuse dumping in our communities.</p>
+            <p>We offer reliable waste collection services, recycling solutions, community clean-up exercises and environmental awareness campaigns — all designed to protect public health and the environment.</p>
+            <p>Our vision is to become a leading waste management company that helps build cleaner and healthier communities across Ghana.</p>
+            <a href="register-now.html" class="btn btn-primary" style="margin-top:10px"><i class="fa-solid fa-arrow-right-long"></i> Register With Us</a>
+        </div>
+    </div>
+</section>
 
-        <a href="index.html" class="back">Back to Home</a>
-    </section>
+<!-- ===== Mission / Vision / Values ===== -->
+<section class="section bins">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-compass"></i> What drives us</span>
+            <h2>Our Mission, Vision &amp; Values</h2>
+        </div>
+        <div class="mv-grid">
+            <div class="mv-card reveal"><i class="fa-solid fa-bullseye"></i><h3>Our Mission</h3><p>To deliver reliable, affordable waste management that keeps communities clean and reduces environmental harm.</p></div>
+            <div class="mv-card reveal d1"><i class="fa-solid fa-eye"></i><h3>Our Vision</h3><p>To become Ghana's leading waste management company, building cleaner and healthier communities nationwide.</p></div>
+            <div class="mv-card reveal d2"><i class="fa-solid fa-heart"></i><h3>Our Values</h3><p>Reliability, sustainability and community — at the heart of everything we do, every single day.</p></div>
+        </div>
+    </div>
+</section>
 
-    </body>
+<!-- ===== Stats band ===== -->
+<section class="stats-band">
+    <div class="container stats-grid">
+        <div class="stat reveal"><strong data-count="8">8</strong><span>Bin Sizes Offered</span></div>
+        <div class="stat reveal d1"><strong>FREE</strong><span>First Pickup &amp; Bin</span></div>
+        <div class="stat reveal d2"><strong data-count="100" data-suffix="%">100%</strong><span>Recyclable Focus</span></div>
+        <div class="stat reveal d3"><strong>24/7</strong><span>Support Available</span></div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner" style="padding-top:96px">
+    <div class="container">
+        <div class="cta-inner reveal">
+            <h2>Join the Clean-Up Movement</h2>
+            <p>Whether you're a household, a business or a community group, we'd love to work with you.</p>
+            <div class="cta-actions">
+                <a href="register-now.html" class="btn btn-accent"><i class="fa-solid fa-user-plus"></i> Get Started</a>
+                <a href="services.html" class="btn btn-ghost"><i class="fa-solid fa-list-check"></i> Explore Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="QuickPick Services logo">
+                    <span class="brand-name" style="color:#fff">QuickPick<small>SERVICES</small></span>
+                </a>
+                <p>Professional waste collection, recycling and environmental sanitation services. Clean today, green tomorrow.</p>
+                <div class="footer-social">
+                    <a href="https://whatsapp.com/channel/0029VbCp4rj9Gv7VaK8Zg30S" aria-label="WhatsApp Channel"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@quickpick.service?_r=1&_t=ZS-97LsqGVy0bE" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="mailto:qpghana26@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+233249172520" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="community-clean-ups.html">Community Clean-Ups</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Register</h4>
+                <ul>
+                    <li><a href="register-now.html">Customer Registration</a></li>
+                    <li><a href="other-packages.html">All Bin Sizes</a></li>
+                    <li><a href="already-have.html">Already Have a Bin?</a></li>
+                    <li><a href="index.html#bins">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> Abuakwa, Kumasi, Atwima Nwabiagya Municipal, Ghana</li>
+                    <li><i class="fa-solid fa-phone"></i> +233 249 172 520 / +233 249 169 311</li>
+                    <li><i class="fa-solid fa-envelope"></i> qpghana26@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span data-year>2026</span> QuickPick Waste Management Services. All rights reserved.</span>
+            <span>Clean Today, Green Tomorrow 🌍</span>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/233249172520" class="wa-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox"><span class="lb-close">&times;</span><img alt="Enlarged view"></div>
+
+<script src="js/main.js"></script>
+</body>
 </html>
