@@ -156,14 +156,19 @@
         var amountEl = calc.querySelector("#calcAmount");
         var breakdownEl = calc.querySelector("#calcBreakdown");
         function recalc() {
-            var price = parseFloat(binSel.value) || 0;
+            var opt = binSel.options[binSel.selectedIndex];
+            var single = parseFloat(opt.value) || 0;
+            var multi = parseFloat(opt.getAttribute("data-multi")) || single;
             var perMonth = parseFloat(freqSel.value) || 0;
-            var total = price * perMonth;
+            // One pickup a month = standard rate; multiple = discounted rate
+            var rate = perMonth > 1 ? multi : single;
+            var total = rate * perMonth;
             amountEl.innerHTML = "GHC " + total + " <small>/ month</small>";
-            var binText = binSel.options[binSel.selectedIndex].text;
+            var binText = opt.text;
             var freqText = freqSel.options[freqSel.selectedIndex].text;
+            var pickupWord = perMonth === 1 ? " pickup)" : " pickups)";
             breakdownEl.textContent =
-                binText + " · " + freqText + " (GHC " + price + " × " + perMonth + " pickups)";
+                binText + " · " + freqText + " (GHC " + rate + " × " + perMonth + pickupWord;
         }
         binSel.addEventListener("change", recalc);
         freqSel.addEventListener("change", recalc);
