@@ -203,6 +203,57 @@
         });
     }
 
+    /* ---- Detailed registration form → WhatsApp ---- */
+    var sendDetailed = document.querySelector("#sendDetailedWa");
+    if (sendDetailed) {
+        sendDetailed.addEventListener("click", function (e) {
+            e.preventDefault();
+            var form = document.querySelector("#registrationForm");
+            if (!form) return;
+            var lines = ["*QuickPick Registration*", ""];
+            form.querySelectorAll(".reg-section").forEach(function (sec) {
+                var titleEl = sec.querySelector(".reg-section-title");
+                if (!titleEl) return;
+                var title = titleEl.textContent.replace(/^\s*\d+\.\s*/, "").trim();
+                if (/official use/i.test(title)) return; // skip internal section
+                var parts = [];
+                // Text / date / select / textarea fields
+                sec.querySelectorAll(
+                    "input:not([type=radio]):not([type=checkbox]), textarea, select"
+                ).forEach(function (inp) {
+                    var lab = inp.previousElementSibling;
+                    var labelText =
+                        lab && lab.tagName === "LABEL" ? lab.textContent.trim() : "";
+                    var val = (inp.value || "").trim();
+                    if (val) parts.push("- " + labelText + ": " + val);
+                });
+                // Single-select (radio) groups
+                sec.querySelectorAll(".checkbox-group").forEach(function (grp) {
+                    var lab = grp.previousElementSibling;
+                    var labelText =
+                        lab && lab.tagName === "LABEL" ? lab.textContent.trim() : "";
+                    var checked = grp.querySelector("input:checked");
+                    if (checked) {
+                        parts.push("- " + labelText + ": " + checked.parentElement.textContent.trim());
+                    }
+                });
+                if (parts.length) {
+                    lines.push("*" + title + "*");
+                    lines = lines.concat(parts);
+                    lines.push("");
+                }
+            });
+            if (lines.length <= 2) {
+                alert("Please fill in the form before sending.");
+                return;
+            }
+            window.open(
+                "https://wa.me/233249172520?text=" + encodeURIComponent(lines.join("\n")),
+                "_blank"
+            );
+        });
+    }
+
     /* ---- Contact / register form (mailto fallback) ---- */
     var form = document.querySelector("#registerForm");
     if (form) {
