@@ -207,20 +207,36 @@
     var regEstimate = document.querySelector("#regEstimate");
     if (regEstimate) {
         var regForm2 = document.querySelector("#registrationForm");
+        var lblEl = regEstimate.querySelector(".lbl");
         var valEl = document.querySelector("#regEstimateVal");
         var bdEl = document.querySelector("#regEstimateBd");
         function updateRegEstimate() {
             var bin = regForm2.querySelector('input[name="bin"]:checked');
+            if (!bin) {
+                regEstimate.style.display = "none";
+                return;
+            }
+            var binLabel = bin.parentElement.textContent.trim();
+            // Flat one-time fee (customer already owns a bin)
+            var flat = parseFloat(bin.getAttribute("data-flat"));
+            if (flat) {
+                regEstimate.style.display = "";
+                if (lblEl) lblEl.textContent = "Registration fee";
+                valEl.innerHTML = "GHC " + flat + " <small>one-time</small>";
+                bdEl.textContent =
+                    binLabel + " · first pickup FREE · pickup price based on your bin size";
+                return;
+            }
             var freq = regForm2.querySelector('input[name="frequency"]:checked');
-            if (!bin || !freq) {
+            if (!freq) {
                 regEstimate.style.display = "none";
                 return;
             }
             regEstimate.style.display = "";
+            if (lblEl) lblEl.textContent = "Estimated monthly cost";
             var single = parseFloat(bin.getAttribute("data-single")) || 0;
             var multi = parseFloat(bin.getAttribute("data-multi")) || single;
             var per = parseFloat(freq.getAttribute("data-permonth"));
-            var binLabel = bin.parentElement.textContent.trim();
             var freqLabel = freq.parentElement.textContent.trim();
             if (!per || per <= 0) {
                 // On Call — usage varies
