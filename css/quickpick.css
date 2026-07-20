@@ -804,6 +804,10 @@ ul{list-style:none;}
     padding:20px;
 }
 .gallery-item .ph i{font-size:2.2rem;margin-bottom:10px;}
+/* Real photo gallery: square tiles (photos are portrait, 4:3 would over-crop) */
+.gallery-photos .gallery-item{aspect-ratio:1/1;cursor:zoom-in;}
+.gallery-photos .gallery-item img{object-position:center;}
+
 .gallery-item .cap{
     position:absolute;left:0;right:0;bottom:0;
     background:linear-gradient(transparent,rgba(2,44,26,.85));
