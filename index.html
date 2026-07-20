@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickPick Waste Management Services | Clean Today, Green Tomorrow</title>
-    <meta name="description" content="Professional waste collection, recycling and environmental sanitation services in Kumasi, Ghana. Reliable household & commercial pickups, durable bins from 10L to 360L.">
+    <meta name="description" content="Professional waste collection, recycling and environmental sanitation services in Kumasi, Ghana. Residential, commercial and hostel pickups with durable 120L and 240L bins.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +55,7 @@
                 <a href="index.html#bins" class="btn btn-ghost"><i class="fa-solid fa-tags"></i> View Pricing</a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><strong>8</strong><span>Bin sizes available</span></div>
+                <div class="stat"><strong>120L<br>&amp; 240L</strong><span>Bin sizes available</span></div>
                 <div class="stat"><strong>FREE</strong><span>First pickup &amp; bin</span></div>
                 <div class="stat"><strong>20 Jul<br>2026</strong><span>Official launch</span></div>
             </div>
@@ -145,21 +145,35 @@
     <div class="container">
         <div class="section-head reveal">
             <span class="eyebrow"><i class="fa-solid fa-trash-can"></i> Bin sizes &amp; pricing</span>
-            <h2>Pick the Perfect Bin for You</h2>
-            <p>Strong, durable, UV-resistant bins. Transparent pricing — pay only per full pickup.</p>
+            <h2>Our Price List</h2>
+            <p>Two strong, UV-resistant bin sizes. The more often we collect, the less you pay per pickup.</p>
         </div>
-        <div class="bin-grid">
-            <div class="bin-card featured reveal"><span class="bin-tag">Most Popular</span><div class="bin-size">120L</div><img class="bin-svg" src="images/bins/bin-120.png" alt="120L QuickPick bin"><div class="bin-price"><span class="cur">GHC</span> <span class="amt">35</span><span class="per">per full pickup</span></div></div>
-            <div class="bin-card reveal d1"><div class="bin-size">240L</div><img class="bin-svg" src="images/bins/bin-240.png" alt="240L QuickPick bin"><div class="bin-price"><span class="cur">GHC</span> <span class="amt">50</span><span class="per">per full pickup</span></div></div>
-            <div class="bin-card reveal d2"><div class="bin-size">360L</div><img class="bin-svg" src="images/bins/bin-360.png" alt="360L QuickPick bin"><div class="bin-price"><span class="cur">GHC</span> <span class="amt">70</span><span class="per">per full pickup</span></div></div>
-            <a class="bin-card bin-more reveal d3" href="other-packages.html">
-                <i class="fa-solid fa-layer-group"></i>
-                <h3>Other Sizes &amp; Pricing</h3>
-                <span>See all available options</span>
-                <span class="more-cta">View packages <i class="fa-solid fa-arrow-right-long"></i></span>
-            </a>
+
+        <div class="bin-heads reveal">
+            <div class="bin-head"><img src="images/bins/bin-120.png" alt="120L QuickPick bin"><span>120L Bin</span></div>
+            <div class="bin-head"><img src="images/bins/bin-240.png" alt="240L QuickPick bin"><span>240L Bin</span></div>
         </div>
-        <p class="bin-note"><i class="fa-solid fa-circle-info text-accent"></i> Not sure which size fits your needs? <a href="contact.html" class="text-accent"><strong>Talk to our team</strong></a> and we'll help you choose.</p>
+
+        <div class="seg-toggle reveal d1" id="segToggle">
+            <button type="button" class="seg-btn active" data-segment="standard">Residential &amp; Commercial</button>
+            <button type="button" class="seg-btn" data-segment="hostel">Hostel</button>
+        </div>
+
+        <div class="table-scroll reveal d1">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Collection Frequency</th>
+                        <th>120L Bin</th>
+                        <th>240L Bin</th>
+                        <th class="cost-col">Cost per month</th>
+                    </tr>
+                </thead>
+                <tbody id="priceTableBody"></tbody>
+            </table>
+        </div>
+
+        <p class="bin-note"><i class="fa-solid fa-circle-info text-accent"></i> Rates shown are per full pickup. See the <a href="other-packages.html" class="text-accent"><strong>full price list</strong></a>, or <a href="contact.html" class="text-accent"><strong>talk to our team</strong></a> to choose.</p>
     </div>
 </section>
 
@@ -169,35 +183,36 @@
         <div class="section-head reveal">
             <span class="eyebrow"><i class="fa-solid fa-calculator"></i> Cost estimator</span>
             <h2>Estimate Your Monthly Cost</h2>
-            <p>Choose your bin size and how often you need pickups to see an instant estimate.</p>
+            <p>Choose your service type, bin size and pickup frequency to see an instant estimate.</p>
         </div>
         <div class="calc-card reveal d1" id="costCalc">
-            <div class="calc-grid">
+            <div class="calc-grid calc-grid-3">
+                <div class="field">
+                    <label for="calcService">Service type</label>
+                    <select id="calcService">
+                        <option>Residential</option>
+                        <option>Commercial</option>
+                        <option>Hostel</option>
+                    </select>
+                </div>
                 <div class="field">
                     <label for="calcBin">Bin size</label>
                     <select id="calcBin">
-                        <option value="35" data-multi="30" selected>120L — GHC 35 / pickup</option>
-                        <option value="50" data-multi="45">240L — GHC 50 / pickup</option>
-                        <option value="70" data-multi="65">360L — GHC 70 / pickup</option>
+                        <option value="120L" selected>120L</option>
+                        <option value="240L">240L</option>
                     </select>
                 </div>
                 <div class="field">
                     <label for="calcFreq">Pickup frequency</label>
-                    <select id="calcFreq">
-                        <option value="4" selected>Weekly (4 / month)</option>
-                        <option value="8">Twice a week (8 / month)</option>
-                        <option value="2">Bi-weekly (2 / month)</option>
-                        <option value="1">Monthly (1 / month)</option>
-                        <option value="30">Daily (30 / month)</option>
-                    </select>
+                    <select id="calcFreq"></select>
                 </div>
             </div>
             <div class="calc-result">
                 <div class="label">Estimated monthly cost</div>
-                <div class="amount" id="calcAmount">GHC 120 <small>/ month</small></div>
+                <div class="amount" id="calcAmount">—</div>
                 <div class="breakdown" id="calcBreakdown"></div>
             </div>
-            <p class="calc-note">Multiple pickups a month enjoy a discounted per-pickup rate. Estimate only — excludes one-time registration and your FREE first pickup. <a href="register-now.html" class="text-accent"><strong>Register now</strong></a></p>
+            <p class="calc-note">More frequent pickups have a lower per-pickup rate. Estimate only — excludes one-time registration and your FREE first pickup. <a href="register-now.html" class="text-accent"><strong>Register now</strong></a></p>
         </div>
     </div>
 </section>
@@ -215,7 +230,7 @@
                 <img class="pkg-svg" src="images/bins/bin-120.png" alt="120L QuickPick bin">
                 <h3>120L Bin Package</h3>
                 <div class="reg-price"><span class="cur">GHC</span> <span class="amt">100</span></div>
-                <p class="sub">One-time registration · GHC 35 per full pickup</p>
+                <p class="sub">One-time registration · from GHC 15 per full pickup</p>
                 <ul>
                     <li><i class="fa-solid fa-circle-check"></i> FREE 120L durable bin</li>
                     <li><i class="fa-solid fa-circle-check"></i> First pickup is FREE</li>
@@ -228,7 +243,7 @@
                 <img class="pkg-svg" src="images/bins/bin-240.png" alt="240L QuickPick bin">
                 <h3>240L Bin Package</h3>
                 <div class="reg-price"><span class="cur">GHC</span> <span class="amt">170</span></div>
-                <p class="sub">One-time registration · GHC 50 per full pickup</p>
+                <p class="sub">One-time registration · from GHC 25 per full pickup</p>
                 <ul>
                     <li><i class="fa-solid fa-circle-check"></i> FREE 240L large-capacity bin</li>
                     <li><i class="fa-solid fa-circle-check"></i> First pickup is FREE</li>
@@ -242,7 +257,7 @@
             <div class="package reveal">
                 <div class="service-icon" style="margin:0 auto 14px"><i class="fa-solid fa-layer-group"></i></div>
                 <h3>Other Packages</h3>
-                <p class="sub" style="margin-bottom:18px">Explore the full range of bin sizes from 10L to 360L with our complete price chart.</p>
+                <p class="sub" style="margin-bottom:18px">See our complete price list, including Residential, Commercial and Hostel rates.</p>
                 <a href="other-packages.html" class="btn btn-outline">View All Sizes</a>
             </div>
             <div class="package reveal d1">
@@ -362,7 +377,7 @@
             </div>
             <div class="faq-item reveal">
                 <button class="faq-q" type="button">How much does it cost? <i class="fa-solid fa-plus"></i></button>
-                <div class="faq-a"><p>There's a one-time registration (GHC 100 for the 120L package, GHC 170 for 240L) plus a per-pickup price based on your bin size, ranging from GHC 5 (10L) to GHC 70 (360L). Your first pickup is always FREE.</p></div>
+                <div class="faq-a"><p>There's a one-time registration (GHC 100 for the 120L package, GHC 170 for 240L) plus a per-pickup rate that depends on your service type, bin size and how often we collect — from GHC 15 (120L) and GHC 25 (240L). Hostels have their own discounted rates starting at GHC 10. The more frequent the pickups, the lower the rate per pickup. Your first pickup is always FREE.</p></div>
             </div>
             <div class="faq-item reveal">
                 <button class="faq-q" type="button">Which areas do you cover? <i class="fa-solid fa-plus"></i></button>
@@ -374,7 +389,7 @@
             </div>
             <div class="faq-item reveal">
                 <button class="faq-q" type="button">How often will you collect my waste? <i class="fa-solid fa-plus"></i></button>
-                <div class="faq-a"><p>As often as you need — daily, weekly, bi-weekly, monthly, or on call. You choose the schedule that works for you.</p></div>
+                <div class="faq-a"><p>You choose the schedule: every 3/4 days, weekly, bi-weekly or monthly. Hostels can also opt for collection every 2 days or every 4/5 days.</p></div>
             </div>
             <div class="faq-item reveal">
                 <button class="faq-q" type="button">I already have a dustbin — can I still register? <i class="fa-solid fa-plus"></i></button>
@@ -428,7 +443,7 @@
                 <h4>Register</h4>
                 <ul>
                     <li><a href="register-now.html">Customer Registration</a></li>
-                    <li><a href="other-packages.html">All Bin Sizes</a></li>
+                    <li><a href="other-packages.html">Price List</a></li>
                     <li><a href="already-have.html">Already Have a Bin?</a></li>
                     <li><a href="index.html#bins">Pricing</a></li>
                 </ul>
@@ -454,6 +469,7 @@
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox"><span class="lb-close">&times;</span><img alt="Enlarged view"></div>
 
+<script src="js/pricing.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

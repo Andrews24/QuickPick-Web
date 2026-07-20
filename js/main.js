@@ -148,30 +148,85 @@
         var timer = setInterval(tick, 1000);
     }
 
+    /* ---- Price table + segment toggle ---- */
+    var priceBody = document.querySelector("#priceTableBody");
+    if (priceBody && window.QP_PRICING) {
+        var PT = window.QP_PRICING;
+        var renderPriceTable = function (segment) {
+            var rows = "";
+            PT.frequenciesFor(segment).forEach(function (f) {
+                var a = PT.rates[segment]["120L"][f.key];
+                var b = PT.rates[segment]["240L"][f.key];
+                rows +=
+                    '<tr><td class="freq"><strong>' + f.label + "</strong><small>" + f.note + "</small></td>" +
+                    '<td class="rate">GHC ' + a + "</td>" +
+                    '<td class="rate">GHC ' + b + "</td>" +
+                    '<td class="cost-col"><span>GHC ' + a * f.perMonth + " <small>(120L)</small></span>" +
+                    "<span>GHC " + b * f.perMonth + " <small>(240L)</small></span></td></tr>";
+            });
+            priceBody.innerHTML = rows;
+        };
+        renderPriceTable("standard");
+        var segToggle = document.querySelector("#segToggle");
+        if (segToggle) {
+            segToggle.querySelectorAll(".seg-btn").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    segToggle.querySelectorAll(".seg-btn").forEach(function (b) {
+                        b.classList.remove("active");
+                    });
+                    btn.classList.add("active");
+                    renderPriceTable(btn.getAttribute("data-segment"));
+                });
+            });
+        }
+    }
+
     /* ---- Cost calculator ---- */
     var calc = document.querySelector("#costCalc");
-    if (calc) {
+    if (calc && window.QP_PRICING) {
+        var PC = window.QP_PRICING;
+        var svcSel = calc.querySelector("#calcService");
         var binSel = calc.querySelector("#calcBin");
         var freqSel = calc.querySelector("#calcFreq");
         var amountEl = calc.querySelector("#calcAmount");
         var breakdownEl = calc.querySelector("#calcBreakdown");
-        function recalc() {
-            var opt = binSel.options[binSel.selectedIndex];
-            var single = parseFloat(opt.value) || 0;
-            var multi = parseFloat(opt.getAttribute("data-multi")) || single;
-            var perMonth = parseFloat(freqSel.value) || 0;
-            // One pickup a month = standard rate; multiple = discounted rate
-            var rate = perMonth > 1 ? multi : single;
-            var total = rate * perMonth;
-            amountEl.innerHTML = "GHC " + total + " <small>/ month</small>";
-            var binText = opt.text;
-            var freqText = freqSel.options[freqSel.selectedIndex].text;
-            var pickupWord = perMonth === 1 ? " pickup)" : " pickups)";
+
+        var fillFreq = function () {
+            var seg = PC.segmentOf(svcSel.value);
+            var prev = freqSel.value;
+            var opts = PC.frequenciesFor(seg);
+            freqSel.innerHTML = opts
+                .map(function (f) {
+                    return '<option value="' + f.key + '">' + f.label + " (" + f.perMonth + " / month)</option>";
+                })
+                .join("");
+            var keep = opts.some(function (f) {
+                return f.key === prev;
+            });
+            freqSel.value = keep ? prev : "weekly";
+        };
+
+        var recalc = function () {
+            var r = PC.lookup(svcSel.value, binSel.value, freqSel.value);
+            if (!r) {
+                amountEl.textContent = "—";
+                breakdownEl.textContent = "";
+                return;
+            }
+            amountEl.innerHTML = "GHC " + r.monthly + " <small>/ month</small>";
+            var word = r.perMonth === 1 ? " pickup)" : " pickups)";
             breakdownEl.textContent =
-                binText + " · " + freqText + " (GHC " + rate + " × " + perMonth + pickupWord;
-        }
+                svcSel.value + " · " + binSel.value + " · " + r.label +
+                " (GHC " + r.rate + " × " + r.perMonth + word;
+        };
+
+        svcSel.addEventListener("change", function () {
+            fillFreq();
+            recalc();
+        });
         binSel.addEventListener("change", recalc);
         freqSel.addEventListener("change", recalc);
+        fillFreq();
         recalc();
     }
 
@@ -203,14 +258,32 @@
         });
     }
 
-    /* ---- Detailed form: live estimated monthly cost ---- */
+    /* ---- Detailed form: service-aware frequency + live estimate ---- */
     var regEstimate = document.querySelector("#regEstimate");
-    if (regEstimate) {
+    if (regEstimate && window.QP_PRICING) {
+        var PR = window.QP_PRICING;
         var regForm2 = document.querySelector("#registrationForm");
         var lblEl = regEstimate.querySelector(".lbl");
         var valEl = document.querySelector("#regEstimateVal");
         var bdEl = document.querySelector("#regEstimateBd");
-        function updateRegEstimate() {
+
+        var currentService = function () {
+            var s = regForm2.querySelector('input[name="service"]:checked');
+            return s ? s.value || s.parentElement.textContent.trim() : "Residential";
+        };
+
+        // Only show the frequencies that apply to the chosen service type
+        var syncFrequencies = function () {
+            var seg = PR.segmentOf(currentService());
+            regForm2.querySelectorAll('input[name="frequency"]').forEach(function (r) {
+                var f = PR.frequencies[r.value];
+                var ok = f && f.segments.indexOf(seg) !== -1;
+                r.parentElement.style.display = ok ? "" : "none";
+                if (!ok && r.checked) r.checked = false;
+            });
+        };
+
+        var updateRegEstimate = function () {
             var bin = regForm2.querySelector('input[name="bin"]:checked');
             if (!bin) {
                 regEstimate.style.display = "none";
@@ -232,30 +305,53 @@
                 regEstimate.style.display = "none";
                 return;
             }
-            regEstimate.style.display = "";
-            if (lblEl) lblEl.textContent = "Estimated monthly cost";
-            var single = parseFloat(bin.getAttribute("data-single")) || 0;
-            var multi = parseFloat(bin.getAttribute("data-multi")) || single;
-            var per = parseFloat(freq.getAttribute("data-permonth"));
-            var freqLabel = freq.parentElement.textContent.trim();
-            if (!per || per <= 0) {
-                // On Call — usage varies
-                valEl.innerHTML = "GHC " + single + " <small>/ pickup</small>";
-                bdEl.textContent = binLabel + " · " + freqLabel + " (varies with usage)";
+            var svc = currentService();
+            var r = PR.lookup(svc, bin.value, freq.value);
+            if (!r) {
+                regEstimate.style.display = "none";
                 return;
             }
-            var rate = per > 1 ? multi : single;
-            var total = rate * per;
-            var word = per === 1 ? " pickup" : " pickups";
-            valEl.innerHTML = "GHC " + total + " <small>/ month</small>";
+            regEstimate.style.display = "";
+            if (lblEl) lblEl.textContent = "Estimated monthly cost";
+            valEl.innerHTML = "GHC " + r.monthly + " <small>/ month</small>";
+            var word = r.perMonth === 1 ? " pickup" : " pickups";
             bdEl.textContent =
-                binLabel + " · " + freqLabel + " (GHC " + rate + " × " + per + word + ")";
-        }
+                svc + " · " + binLabel + " · " + r.label +
+                " (GHC " + r.rate + " × " + r.perMonth + word + ")";
+        };
+
         regForm2
-            .querySelectorAll('input[name="bin"], input[name="frequency"]')
-            .forEach(function (r) {
-                r.addEventListener("change", updateRegEstimate);
+            .querySelectorAll('input[name="service"], input[name="bin"], input[name="frequency"]')
+            .forEach(function (input) {
+                input.addEventListener("change", function () {
+                    if (input.name === "service") syncFrequencies();
+                    updateRegEstimate();
+                });
             });
+        syncFrequencies();
+    }
+
+    /* ---- Quick register: frequency options follow service type ---- */
+    var qrService = document.querySelector("#qrService");
+    var qrFreq = document.querySelector("#qrFreq");
+    if (qrService && qrFreq && window.QP_PRICING) {
+        var PQ = window.QP_PRICING;
+        var fillQuickFreq = function () {
+            var seg = PQ.segmentOf(qrService.value);
+            var prev = qrFreq.value;
+            var opts = PQ.frequenciesFor(seg);
+            qrFreq.innerHTML = opts
+                .map(function (f) {
+                    return "<option>" + f.label + "</option>";
+                })
+                .join("");
+            var keep = opts.some(function (f) {
+                return f.label === prev;
+            });
+            qrFreq.value = keep ? prev : "Weekly";
+        };
+        qrService.addEventListener("change", fillQuickFreq);
+        fillQuickFreq();
     }
 
     /* ---- Detailed registration form → WhatsApp ---- */

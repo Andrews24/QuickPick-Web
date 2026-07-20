@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Packages &amp; Bin Sizes | QuickPick Waste Management Services</title>
-    <meta name="description" content="The full QuickPick bin size and pricing chart — from 10L to 360L. Pay only per full pickup.">
+    <title>Price List | QuickPick Waste Management Services</title>
+    <meta name="description" content="The full QuickPick price list — 120L and 240L bins, with Residential, Commercial and Hostel rates. Pay only per full pickup.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,8 +38,8 @@
 <!-- ===== Page hero ===== -->
 <section class="page-hero">
     <div class="container">
-        <h1>Our Packages &amp; Bin Sizes</h1>
-        <p>Strong, durable, UV-resistant bins in eight sizes — pay only per full pickup. Tap the chart to enlarge.</p>
+        <h1>Price List</h1>
+        <p>Strong, durable, UV-resistant 120L and 240L bins — pay only per full pickup. Tap the chart to enlarge.</p>
         <div class="breadcrumb"><a href="index.html">Home</a> / Packages</div>
     </div>
 </section>
@@ -47,13 +47,45 @@
 <!-- ===== Poster ===== -->
 <section class="section">
     <div class="container" style="max-width:900px">
-        <div class="poster-frame reveal" data-lightbox="images/dustinbins.png">
-            <img src="images/dustinbins2.png" alt="QuickPick bin sizes and pricing — 10L to 360L">
+        <div class="poster-frame reveal" data-lightbox="images/Newpricing.jpeg">
+            <img src="images/Newpricing.jpeg" alt="QuickPick price list — 120L and 240L bins with collection frequency rates">
         </div>
         <div style="text-align:center;margin-top:36px" class="reveal d1">
             <a href="register-now.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Register Now</a>
             <a href="already-have.html" class="btn btn-outline" style="margin-left:10px"><i class="fa-solid fa-trash-can"></i> I Already Have a Bin</a>
         </div>
+    </div>
+</section>
+
+<!-- ===== Rates in text ===== -->
+<section class="section bins" style="padding-top:0">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fa-solid fa-table-list"></i> Rates</span>
+            <h2>Rates by Service Type</h2>
+            <p>The more often we collect, the less you pay per pickup.</p>
+        </div>
+
+        <div class="seg-toggle reveal" id="segToggle">
+            <button type="button" class="seg-btn active" data-segment="standard">Residential &amp; Commercial</button>
+            <button type="button" class="seg-btn" data-segment="hostel">Hostel</button>
+        </div>
+
+        <div class="table-scroll reveal d1">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Collection Frequency</th>
+                        <th>120L Bin</th>
+                        <th>240L Bin</th>
+                        <th class="cost-col">Cost per month</th>
+                    </tr>
+                </thead>
+                <tbody id="priceTableBody"></tbody>
+            </table>
+        </div>
+
+        <p class="bin-note"><i class="fa-solid fa-circle-info text-accent"></i> Registration is one-time — GHC 100 (120L) or GHC 170 (240L), each including a free bin. Already own a bin? Register for GHC 50. Your first pickup is always FREE.</p>
     </div>
 </section>
 
@@ -87,7 +119,7 @@
                 <h4>Register</h4>
                 <ul>
                     <li><a href="register-now.html">Customer Registration</a></li>
-                    <li><a href="other-packages.html">All Bin Sizes</a></li>
+                    <li><a href="other-packages.html">Price List</a></li>
                     <li><a href="already-have.html">Already Have a Bin?</a></li>
                     <li><a href="index.html#bins">Pricing</a></li>
                 </ul>
@@ -113,6 +145,7 @@
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox"><span class="lb-close">&times;</span><img alt="Enlarged view"></div>
 
+<script src="js/pricing.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

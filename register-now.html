@@ -46,16 +46,16 @@
                     <div class="field"><label for="qrName">Full Name</label><input id="qrName" name="name" type="text" placeholder="Your name" required></div>
                     <div class="field"><label for="qrPhone">Phone Number</label><input id="qrPhone" name="phone" type="tel" placeholder="+233 ..." required></div>
                     <div class="field"><label for="qrService">Service Type</label>
-                        <select id="qrService" name="service"><option>Residential</option><option>Commercial</option></select>
+                        <select id="qrService" name="service"><option>Residential</option><option>Commercial</option><option>Hostel</option></select>
                     </div>
                     <div class="field"><label for="qrBin">Bin Size</label>
                         <select id="qrBin" name="bin">
-                            <option selected>120L</option><option>240L</option><option>360L</option>
+                            <option selected>120L</option><option>240L</option>
                             <option>I already have a bin</option>
                         </select>
                     </div>
                     <div class="field"><label for="qrFreq">Pickup Frequency</label>
-                        <select id="qrFreq" name="frequency"><option>Daily</option><option selected>Weekly</option><option>Bi-Weekly</option><option>Monthly</option><option>On Call</option></select>
+                        <select id="qrFreq" name="frequency"></select>
                     </div>
                     <div class="field"><label for="qrLoc">Area / Location</label><input id="qrLoc" name="location" type="text" placeholder="e.g. Abuakwa"></div>
                 </div>
@@ -88,25 +88,26 @@
                     <div class="reg-section-title"><i class="fa-solid fa-truck"></i> 2. Service Information</div>
                     <label>Service Type</label>
                     <div class="checkbox-group">
-                        <label><input type="radio" name="service"> Residential</label>
-                        <label><input type="radio" name="service"> Commercial</label>
+                        <label><input type="radio" name="service" value="Residential"> Residential</label>
+                        <label><input type="radio" name="service" value="Commercial"> Commercial</label>
+                        <label><input type="radio" name="service" value="Hostel"> Hostel</label>
                     </div>
                     <div class="spacer"></div>
                     <label>Bin Size / Package</label>
                     <div class="checkbox-group">
-                        <label><input type="radio" name="bin" value="120L" data-single="35" data-multi="30"> 120L</label>
-                        <label><input type="radio" name="bin" value="240L" data-single="50" data-multi="45"> 240L</label>
-                        <label><input type="radio" name="bin" value="360L" data-single="70" data-multi="65"> 360L</label>
+                        <label><input type="radio" name="bin" value="120L"> 120L</label>
+                        <label><input type="radio" name="bin" value="240L"> 240L</label>
                         <label><input type="radio" name="bin" value="I already have a bin" data-flat="50"> I already have a bin</label>
                     </div>
                     <div class="spacer"></div>
                     <label>Collection Frequency</label>
                     <div class="checkbox-group">
-                        <label><input type="radio" name="frequency" data-permonth="30"> Daily</label>
-                        <label><input type="radio" name="frequency" data-permonth="4"> Weekly</label>
-                        <label><input type="radio" name="frequency" data-permonth="2"> Bi-Weekly</label>
-                        <label><input type="radio" name="frequency" data-permonth="1"> Monthly</label>
-                        <label><input type="radio" name="frequency" data-permonth="0"> On Call</label>
+                        <label><input type="radio" name="frequency" value="2days"> Every 2 days</label>
+                        <label><input type="radio" name="frequency" value="3-4days"> 3/4 days</label>
+                        <label><input type="radio" name="frequency" value="4-5days"> 4/5 days</label>
+                        <label><input type="radio" name="frequency" value="weekly"> Weekly</label>
+                        <label><input type="radio" name="frequency" value="biweekly"> Bi-Weekly</label>
+                        <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
                     </div>
                     <div class="spacer"></div>
                     <div class="reg-estimate" id="regEstimate" style="display:none">
@@ -228,7 +229,7 @@
                 <h4>Register</h4>
                 <ul>
                     <li><a href="register-now.html">Customer Registration</a></li>
-                    <li><a href="other-packages.html">All Bin Sizes</a></li>
+                    <li><a href="other-packages.html">Price List</a></li>
                     <li><a href="already-have.html">Already Have a Bin?</a></li>
                     <li><a href="index.html#bins">Pricing</a></li>
                 </ul>
@@ -249,6 +250,7 @@
     </div>
 </footer>
 
+<script src="js/pricing.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

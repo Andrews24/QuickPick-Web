@@ -1140,6 +1140,105 @@ ul{list-style:none;}
 .reg-estimate .val small{font-size:.9rem;font-weight:600;}
 .reg-estimate .bd{display:block;font-size:.82rem;color:rgba(255,255,255,.85);margin-top:2px;}
 
+/* ============================================================
+   Price table (poster-style) + segment toggle
+   ============================================================ */
+.bin-heads{
+    display:flex;
+    justify-content:center;
+    gap:44px;
+    margin-bottom:26px;
+}
+.bin-head{text-align:center;}
+.bin-head img{height:112px;width:auto;object-fit:contain;margin:0 auto 8px;}
+.bin-head span{font-family:'Poppins',sans-serif;font-weight:700;color:var(--green-700);}
+
+.seg-toggle{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:26px;
+}
+.seg-btn{
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:.92rem;
+    padding:11px 22px;
+    border-radius:999px;
+    border:2px solid var(--green-300);
+    background:transparent;
+    color:var(--green-700);
+    cursor:pointer;
+    transition:background .25s var(--ease),color .25s,border-color .25s,transform .25s var(--ease);
+}
+.seg-btn:hover{transform:translateY(-2px);}
+.seg-btn.active{
+    background:linear-gradient(135deg,var(--green-600),var(--green-400));
+    border-color:transparent;
+    color:#fff;
+    box-shadow:0 8px 20px rgba(10,107,52,.28);
+}
+
+/* Wide table scrolls inside its own container, never the page */
+.table-scroll{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    background:var(--card);
+    border:1px solid var(--line);
+}
+.price-table{
+    width:100%;
+    min-width:560px;
+    border-collapse:collapse;
+    font-size:.96rem;
+}
+.price-table th{
+    background:linear-gradient(135deg,var(--green-700),var(--green-500));
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    text-align:left;
+    padding:16px 18px;
+    white-space:nowrap;
+}
+.price-table th.cost-col{background:linear-gradient(135deg,var(--green-800),var(--green-600));}
+.price-table td{
+    padding:15px 18px;
+    border-bottom:1px solid var(--line);
+    vertical-align:middle;
+}
+.price-table tbody tr:nth-child(even){background:#f7fbf4;}
+.price-table tbody tr:last-child td{border-bottom:none;}
+.price-table .freq strong{display:block;font-family:'Poppins',sans-serif;color:var(--ink);}
+.price-table .freq small{display:block;color:var(--muted);font-size:.78rem;margin-top:2px;}
+.price-table .rate{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    color:var(--green-600);
+    white-space:nowrap;
+}
+.price-table td.cost-col{background:rgba(97,194,50,.09);}
+.price-table td.cost-col span{
+    display:block;
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    color:var(--ink);
+    white-space:nowrap;
+}
+.price-table td.cost-col small{color:var(--muted);font-weight:500;font-size:.76rem;}
+
+.calc-grid-3{grid-template-columns:repeat(3,1fr);}
+
+@media (max-width:768px){
+    .calc-grid-3{grid-template-columns:1fr;}
+    .bin-heads{gap:26px;}
+    .bin-head img{height:86px;}
+    .seg-btn{font-size:.86rem;padding:10px 16px;}
+}
+
 @media (max-width:768px){
     .reg-card{padding:28px 20px;}
     .grid-3{grid-template-columns:1fr;}
