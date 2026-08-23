@@ -82,24 +82,6 @@
         el.textContent = new Date().getFullYear();
     });
 
-    /* ---- Launch popup ---- */
-    var popup = document.querySelector("#launchPopup");
-    if (popup) {
-        var closeBtns = popup.querySelectorAll("[data-close-popup]");
-        function closePopup() {
-            popup.style.display = "none";
-        }
-        closeBtns.forEach(function (b) {
-            b.addEventListener("click", closePopup);
-        });
-        popup.addEventListener("click", function (e) {
-            if (e.target === popup) closePopup();
-        });
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape") closePopup();
-        });
-    }
-
     /* ---- Lightbox (posters / campaign images) ---- */
     var lightbox = document.querySelector("#lightbox");
     if (lightbox) {
@@ -118,35 +100,6 @@
         });
     }
 
-    /* ---- Launch countdown ---- */
-    var cd = document.querySelector("#countdown");
-    if (cd) {
-        var target = new Date(cd.getAttribute("data-target")).getTime();
-        var elD = cd.querySelector("[data-d]"),
-            elH = cd.querySelector("[data-h]"),
-            elM = cd.querySelector("[data-m]"),
-            elS = cd.querySelector("[data-s]");
-        function pad(n) { return n < 10 ? "0" + n : "" + n; }
-        function tick() {
-            var diff = target - Date.now();
-            if (diff <= 0) {
-                cd.innerHTML =
-                    '<div class="countdown-live"><h3>🎉 We\'re Live! QuickPick is now serving your community.</h3></div>';
-                clearInterval(timer);
-                return;
-            }
-            var d = Math.floor(diff / 86400000);
-            var h = Math.floor((diff % 86400000) / 3600000);
-            var m = Math.floor((diff % 3600000) / 60000);
-            var s = Math.floor((diff % 60000) / 1000);
-            if (elD) elD.textContent = d;
-            if (elH) elH.textContent = pad(h);
-            if (elM) elM.textContent = pad(m);
-            if (elS) elS.textContent = pad(s);
-        }
-        tick();
-        var timer = setInterval(tick, 1000);
-    }
 
     /* ---- Price table + segment toggle ---- */
     var priceBody = document.querySelector("#priceTableBody");
